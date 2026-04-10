@@ -62,16 +62,21 @@ continue until complete.
 
 ### 5. Verify search quality
 
-Once ingestion completes, test it:
+Once ingestion completes, test it by pasting this into Claude Code:
 
 ```
-bun run search
+search the knowledge base for "What did [person] say about [topic]?"
 ```
 
-Type natural language queries at the `search>` prompt. Try questions like:
-- "What did [person] say about [topic]?"
-- "affiliate partnerships and referrals"
-- "revenue from last quarter"
+Try different queries to test relevance:
+
+```
+search the knowledge base for "affiliate partnerships and referrals"
+```
+
+```
+search the knowledge base for "revenue from last quarter"
+```
 
 You should see results ranked by relevance with source attribution (file, category, date, speakers).
 
@@ -79,13 +84,13 @@ You should see results ranked by relevance with source attribution (file, catego
 
 ## What You Get
 
-A local, semantic knowledge base with three commands:
+A local, semantic knowledge base you control with natural language:
 
-| Command | What It Does |
+| What to Say in Claude Code | What It Does |
 |---------|-------------|
-| `bun run ingest` | Parse, chunk, embed, and store all your files |
-| `bun run search` | Interactive search — ask questions in plain language |
-| `bun run benchmark` | Run 10 sample queries and report latency stats |
+| `ingest all my files into the knowledge base` | Parse, chunk, embed, and store all your files |
+| `search the knowledge base for "[your question]"` | Search by meaning — ask questions in plain language |
+| `run a benchmark on the knowledge base with 10 sample queries` | Run 10 sample queries and report latency stats |
 
 The knowledge base:
 - Runs entirely on your laptop — no cloud, no API costs
@@ -122,10 +127,9 @@ If results are keyword-level (only matching exact words), the ONNX embedder didn
 
 ### Re-ingesting after adding new files
 
-Delete the database and re-run:
+Tell Claude Code to clear and rebuild:
 ```
-rm data/hfg-brain.db
-bun run ingest
+delete the knowledge base database and re-ingest all my files from scratch
 ```
 
 ---

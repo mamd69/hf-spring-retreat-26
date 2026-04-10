@@ -401,30 +401,37 @@ benchmark, optimize, document. continue until complete.
 
 ### Step 5: Verify it works
 
-Once ingestion completes, test your knowledge base:
+Once ingestion completes, test your knowledge base by pasting queries into Claude Code:
 
 ```
-bun run search
+search the knowledge base for "What did [person] say about [topic]?"
 ```
 
-Type natural-language queries at the `search>` prompt. Try questions like:
+Try different queries to test relevance:
 
-- `What did [person] say about [topic]?`
-- `affiliate partnerships and referrals`
-- `revenue from last quarter`
-- `patient retention strategies`
+```
+search the knowledge base for "affiliate partnerships and referrals"
+```
+
+```
+search the knowledge base for "revenue from last quarter"
+```
+
+```
+search the knowledge base for "patient retention strategies"
+```
 
 You should see results ranked by relevance with source attribution — which file, which category, the date, and who said it.
 
 ### What you get
 
-A local, semantic knowledge base with three commands:
+A local, semantic knowledge base you control with natural language:
 
-| Command | What It Does |
+| What to Say in Claude Code | What It Does |
 |---------|-------------|
-| `bun run ingest` | Parse, chunk, embed, and store all your files |
-| `bun run search` | Interactive search — ask questions in plain language |
-| `bun run benchmark` | Run 10 sample queries and report speed stats |
+| `ingest all my files into the knowledge base` | Parse, chunk, embed, and store all your files |
+| `search the knowledge base for "[your question]"` | Search by meaning — ask questions in plain language |
+| `run a benchmark on the knowledge base with 10 sample queries` | Run 10 sample queries and report speed stats |
 
 Key facts about your knowledge base:
 
@@ -447,11 +454,10 @@ Key facts about your knowledge base:
 
 **"Search results don't seem relevant"** — If results only match exact words, the semantic embedding engine did not load. Look for `ONNX embedder ready: 384d semantic embeddings` when you start. If you see `Falling back to hash-based embeddings`, the embedding model is not loading. Make sure the `ruvector/` directory exists with source code in it.
 
-**Adding new files later** — Delete the database and re-ingest:
+**Adding new files later** — Tell Claude Code to clear and rebuild:
 
 ```
-rm data/hfg-brain.db
-bun run ingest
+delete the knowledge base database and re-ingest all my files from scratch
 ```
 
 ---
@@ -857,8 +863,8 @@ A structured framework of markdown files that serves as a portable personal cont
 | Install Ruflo | `curl -fsSL https://cdn.jsdelivr.net/gh/ruvnet/claude-flow@main/scripts/install.sh \| bash -s -- --full` |
 | Start Claude Code | `dsp` |
 | Resume last session | `dsp-c` |
-| Search your knowledge base | `bun run search` |
-| Re-ingest after adding files | `rm data/hfg-brain.db && bun run ingest` |
+| Search your knowledge base | `search the knowledge base for "[your question]"` |
+| Re-ingest after adding files | `delete the knowledge base database and re-ingest all my files from scratch` |
 
 ### The methodology at a glance
 

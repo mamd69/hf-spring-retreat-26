@@ -1495,26 +1495,47 @@ benchmark, optimize, document. continue until complete.</code></pre>
   </div>
 
   <h3>Step 5: Verify it works</h3>
+  <p>Once ingestion completes, test your knowledge base by pasting queries into Claude Code:</p>
   <div class="prompt-block">
     <div class="prompt-header">
       <span class="prompt-label">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
-        Terminal
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        Paste into Claude Code
       </span>
       <button class="copy-btn" onclick="copyCode(this)">Copy</button>
     </div>
-    <pre><code>bun run search</code></pre>
+    <pre><code>search the knowledge base for "What did <span class="bracket">[person]</span> say about <span class="bracket">[topic]</span>?"</code></pre>
   </div>
-  <p>Try natural-language queries: <em>"What did [person] say about [topic]?"</em> or <em>"revenue from last quarter"</em></p>
+  <p>Try different queries to test relevance:</p>
+  <div class="prompt-block">
+    <div class="prompt-header">
+      <span class="prompt-label">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        Paste into Claude Code
+      </span>
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+    </div>
+    <pre><code>search the knowledge base for "affiliate partnerships and referrals"</code></pre>
+  </div>
+  <div class="prompt-block">
+    <div class="prompt-header">
+      <span class="prompt-label">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        Paste into Claude Code
+      </span>
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+    </div>
+    <pre><code>search the knowledge base for "revenue from last quarter"</code></pre>
+  </div>
 
   <h3>What You Get</h3>
   <div class="table-wrap">
     <table>
-      <thead><tr><th>Command</th><th>What It Does</th></tr></thead>
+      <thead><tr><th>What to Say in Claude Code</th><th>What It Does</th></tr></thead>
       <tbody>
-        <tr><td><code>bun run ingest</code></td><td>Parse, chunk, embed, and store all your files</td></tr>
-        <tr><td><code>bun run search</code></td><td>Interactive search &mdash; ask questions in plain language</td></tr>
-        <tr><td><code>bun run benchmark</code></td><td>Run 10 sample queries and report speed stats</td></tr>
+        <tr><td><code>ingest all my files into the knowledge base</code></td><td>Parse, chunk, embed, and store all your files</td></tr>
+        <tr><td><code>search the knowledge base for "[your question]"</code></td><td>Search by meaning &mdash; ask questions in plain language</td></tr>
+        <tr><td><code>run a benchmark on the knowledge base with 10 sample queries</code></td><td>Run 10 sample queries and report speed stats</td></tr>
       </tbody>
     </table>
   </div>
@@ -1544,13 +1565,12 @@ benchmark, optimize, document. continue until complete.</code></pre>
   <div class="prompt-block">
     <div class="prompt-header">
       <span class="prompt-label">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
-        Terminal
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        Paste into Claude Code
       </span>
       <button class="copy-btn" onclick="copyCode(this)">Copy</button>
     </div>
-    <pre><code>rm data/hfg-brain.db
-bun run ingest</code></pre>
+    <pre><code>delete the knowledge base database and re-ingest all my files from scratch</code></pre>
   </div>
 </section>
 
@@ -2062,8 +2082,8 @@ docs/research/technology-recommendation.md</code></pre>
         <tr><td>Install Ruflo</td><td><code>curl -fsSL https://cdn.jsdelivr.net/gh/ruvnet/claude-flow@main/scripts/install.sh | bash -s -- --full</code></td></tr>
         <tr><td>Start Claude Code</td><td><code>dsp</code></td></tr>
         <tr><td>Resume last session</td><td><code>dsp-c</code></td></tr>
-        <tr><td>Search your KB</td><td><code>bun run search</code></td></tr>
-        <tr><td>Re-ingest files</td><td><code>rm data/hfg-brain.db && bun run ingest</code></td></tr>
+        <tr><td>Search your KB</td><td><code>search the knowledge base for "[your question]"</code></td></tr>
+        <tr><td>Re-ingest files</td><td><code>delete the knowledge base database and re-ingest all my files from scratch</code></td></tr>
       </tbody>
     </table>
   </div>
