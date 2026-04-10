@@ -359,7 +359,18 @@ If your files are elsewhere, tell the AI to copy them:
 copy only the transcripts from [PATH TO YOUR RECORDINGS] into transcripts/
 ```
 
-### Step 3: Plan before building
+### Step 3: Install the skills
+
+Before using the ruvector-setup skill, you need to pull the skills into your project. Paste this into Claude Code:
+
+```
+copy these skills into this project:
+https://github.com/mamd69/hf-spring-retreat-26/tree/main/Skills in .claude/skills/
+```
+
+This installs the pre-built skills that Claude Code uses to understand how to set up and configure your knowledge base.
+
+### Step 4: Plan before building
 
 Paste this prompt, replacing the bracketed paths:
 
@@ -382,7 +393,7 @@ in docs/adr/ and docs/ddd/.
 - Designs a chunking strategy for each file type (how to break large files into searchable pieces)
 - Produces Architecture Decision Records (ADRs) and Domain-Driven Design documents (DDDs) before building anything
 
-### Step 4: Build the knowledge base
+### Step 5: Build the knowledge base
 
 Once the planning documents look right, paste this:
 
@@ -399,7 +410,7 @@ benchmark, optimize, document. continue until complete.
 - Runs benchmarks
 - Reports results
 
-### Step 5: Verify it works
+### Step 6: Verify it works
 
 Once ingestion completes, test your knowledge base by pasting queries into Claude Code:
 
