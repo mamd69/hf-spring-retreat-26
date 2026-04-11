@@ -29,13 +29,14 @@ Copy it exactly, replacing anything in `[BRACKETS]` with your own information.
 ## Table of Contents
 
 1. [What Is Genesis?](#1-what-is-genesis)
-2. [Setting Up Your Tools](#2-setting-up-your-tools)
-3. [Building Your Personal Context Portfolio](#3-building-your-personal-context-portfolio)
-4. [Building Your Knowledge Base](#4-building-your-knowledge-base)
-5. [Elevating Your Knowledge Base to World-Class](#5-elevating-your-knowledge-base-to-world-class)
-6. [Visualizing and Verifying Your Knowledge Base](#6-visualizing-and-verifying-your-knowledge-base)
-7. [The Genesis Methodology: Analyze, Plan, Build](#7-the-genesis-methodology-analyze-plan-build)
-8. [Addendum: Helpful Repos and Tools](#8-addendum-helpful-repos-and-tools)
+2. [Preparing Your Files](#2-preparing-your-files)
+3. [Setting Up Your Tools](#3-setting-up-your-tools)
+4. [Building Your Personal Context Portfolio](#4-building-your-personal-context-portfolio)
+5. [Building Your Knowledge Base](#5-building-your-knowledge-base)
+6. [Elevating Your Knowledge Base to World-Class](#6-elevating-your-knowledge-base-to-world-class)
+7. [Visualizing and Verifying Your Knowledge Base](#7-visualizing-and-verifying-your-knowledge-base)
+8. [The Genesis Methodology: Analyze, Plan, Build](#8-the-genesis-methodology-analyze-plan-build)
+9. [Addendum: Helpful Repos and Tools](#9-addendum-helpful-repos-and-tools)
 
 ---
 
@@ -76,11 +77,64 @@ Everything Genesis does follows four steps:
 
 This guide walks you through every step.
 
+### Two starting points: Greenfield vs. Brownfield
+
+Before you begin, it helps to know which type of Genesis project you are starting:
+
+| | Greenfield | Brownfield |
+|---|---|---|
+| **What it means** | A new business or new idea. You are starting from scratch with little or no existing data. | An existing business with years of accumulated documents, transcripts, financials, meeting notes, and institutional knowledge. |
+| **What you have** | A seed of an idea, maybe a business plan or some early notes. | A mountain of context — files on your computer, in Google Drive, in your EMR, in your head. |
+| **Best setup** | A GitHub Codespace (runs in your browser, nothing to install). | VS Code on your desktop (your files are already on your computer — no uploading needed). |
+| **Where to start** | Jump straight to setup, then let the AI help you research and build from the ground up. | Start by organizing your files, then point the AI at them locally. |
+
+Most business leaders doing Genesis have an existing business — that is a **brownfield** project. This guide covers both paths.
+
 ---
 
-## 2. Setting Up Your Tools
+## 2. Preparing Your Files
 
-You need four things: a GitHub account (where your project lives), a Codespace (your development environment in the browser), Claude Code (your AI assistant), and Ruflo (the orchestration platform that coordinates multiple AI agents).
+If you are doing a **greenfield** project (starting from scratch), skip ahead to [Section 3: Setting Up Your Tools](#3-setting-up-your-tools).
+
+If you have an existing business with files, take 30-60 minutes to prepare before you start. This step pays for itself many times over.
+
+### Make a backup first
+
+Before pointing AI at your business files, make a backup of your originals. Copy them to an external drive, Google Drive, or another safe location. The AI will not delete your files, but having a backup is good practice before any reorganization.
+
+### Organize by type
+
+Group your files into folders by category. Don't overthink it — the folder names become automatic categories in your knowledge base later. For example:
+
+```
+Business Files/
+  Transcripts/        — call recordings, meeting notes
+  Financial/          — P&L, tax docs, QuickBooks exports
+  Marketing/          — slide decks, brochures, website copy
+  Operations/         — SOPs, employee handbooks, policies
+  Legal/              — contracts, agreements, compliance docs
+```
+
+### Let the AI help you reorganize
+
+If your files are a mess, that is fine. One of the first things you can do is point the AI at a folder and ask it to propose an organization plan:
+
+```
+these are all of my business files. Analyze this and help me create a plan
+to reorganize this. Don't implement — write the plan as a markdown document.
+```
+
+The AI will catalog everything, identify file types, and propose a logical structure. Review the plan, adjust it, then tell the AI to implement it.
+
+### You don't always need copies
+
+If you are only feeding files into the knowledge base (not modifying them), you do not need to copy them into your project. When working locally with VS Code, you can link to your original files instead of duplicating them. This is covered in the next section under "Option B."
+
+---
+
+## 3. Setting Up Your Tools
+
+You need four things: a GitHub account (where your project lives), a development environment (Codespace or VS Code on your desktop), Claude Code (your AI assistant), and Ruflo (the orchestration platform that coordinates multiple AI agents).
 
 ### Step 1: Create a GitHub account
 
@@ -107,7 +161,11 @@ A repository (or "repo") is a project folder that stores your files.
 5. **Add README:** Check this box.
 6. Click **Create repository**.
 
-### Step 3: Open a GitHub Codespace
+### Step 3: Open your development environment
+
+Choose the option that fits your project:
+
+#### Option A: Use a Codespace (best for greenfield projects)
 
 A Codespace is a complete development environment that runs in your browser. No software to install.
 
@@ -119,7 +177,47 @@ A Codespace is a complete development environment that runs in your browser. No 
    - **Center area:** Where you view and edit files.
    - **Bottom panel:** The terminal, where you type commands.
 
-> **If you already have VS Code Desktop installed:** You can open a Codespace from VS Code instead. Open VS Code, click Start > Connect to... > Connect New Codespace, and select your repository.
+This is the easiest option if you are starting fresh or do not have many existing files.
+
+#### Option B: Use VS Code on your desktop (best for brownfield projects)
+
+If you have an existing business with lots of files on your computer, working locally is strongly preferred. Your files are already here — no uploading needed.
+
+1. Download and install VS Code from **code.visualstudio.com** (if you do not already have it).
+2. On GitHub, go to your repository's main page.
+3. Click the green **Code** button.
+4. Click the **Local** tab (not Codespaces).
+5. Copy the HTTPS URL.
+6. In VS Code, click **New Window**.
+7. Click **Clone Git Repository** (you will see this on the welcome screen).
+8. Paste the URL at the top and press Enter.
+9. Select a location for the project. Tip: keep all your projects in one directory (e.g., `Projects/`), and consider syncing that directory to Google Drive for backup.
+10. Click **Open** when prompted.
+
+**Bringing in your existing business files:**
+
+Once your project is open in VS Code, drag a folder from Finder (Mac) or File Explorer (Windows) into the VS Code sidebar. You will see two options:
+
+| Option | What It Does | When to Use It |
+|--------|-------------|----------------|
+| **Add folder to workspace** | Links to the original files. No copy is made. | When you are only reading files to feed into your knowledge base. This is the most common choice. |
+| **Copy** | Makes a duplicate inside your project. | When you plan to manipulate, reorganize, or transform the content. |
+
+**Important: Keep your business files out of GitHub.** Your business files should stay on your local machine — you do not want them uploaded to your GitHub repository. After adding files to your workspace, tell Claude Code to exclude them:
+
+```
+add [FOLDER NAME] to the .gitignore so it is not uploaded to GitHub
+```
+
+For example, if you dragged in a folder called "Business Files":
+
+```
+add Business Files/ to the .gitignore so it is not uploaded to GitHub
+```
+
+This ensures your private business documents stay local while your project code syncs to GitHub normally.
+
+> **Note on large directories:** VS Code may warn that there are too many active changes to track. This is expected and harmless — it just means Git will not try to sync those files, which is exactly what you want.
 
 **Keep this window open.** You will use it for everything that follows.
 
@@ -127,7 +225,9 @@ A Codespace is a complete development environment that runs in your browser. No 
 
 Claude Code is your AI-powered coding assistant. It runs in the terminal.
 
-1. In your Codespace, look at the bottom panel for the **Terminal** tab. If you do not see it, press `Ctrl + `` ` (the backtick key, below Escape).
+> **Already installed Claude Code on your Mac?** If you previously installed Claude Code and created the `dsp`/`dsp-c` shortcuts, you do not need to do those steps again — they are global. Skip ahead to [Step 6: Install Ruflo](#step-6-install-ruflo), which needs to be set up for each new project.
+
+1. In your Codespace or VS Code terminal, look at the bottom panel for the **Terminal** tab. If you do not see it, press `Ctrl + `` ` (the backtick key, below Escape).
 2. Copy and paste this command into the terminal and press Enter:
 
 ```
@@ -138,7 +238,9 @@ curl -fsSL https://claude.ai/install.sh | bash
 
 ### Step 5: Create shortcuts
 
-These shortcuts save you from typing long commands every time. Copy and paste this into your terminal:
+These shortcuts save you from typing long commands every time.
+
+**In a Codespace (Linux):** Copy and paste this into your terminal:
 
 ```
 echo -e "alias dsp='claude --dangerously-skip-permissions'\nalias dsp-c='claude --dangerously-skip-permissions -c'" >> ~/.bashrc
@@ -150,14 +252,24 @@ Then run:
 source ~/.bashrc
 ```
 
+**On a Mac desktop:** Use these commands instead:
+
+```
+echo -e "alias dsp='claude --dangerously-skip-permissions'\nalias dsp-c='claude --dangerously-skip-permissions -c'" >> ~/.zshrc
+```
+
+Then run:
+
+```
+source ~/.zshrc
+```
+
 This creates two shortcuts:
 
 | Shortcut | What It Does |
 |----------|-------------|
 | `dsp` | Starts Claude Code without asking permission for every action (required for agent workflows) |
 | `dsp-c` | Same as above, but resumes your last session so it remembers what you were working on |
-
-> **On a Mac desktop (not Codespace):** Replace `~/.bashrc` with `~/.zshrc` in both commands above.
 
 > **Security note:** The `--dangerously-skip-permissions` flag lets Claude run commands without asking you to approve each one. Only use this in environments you control, like your own Codespace.
 
@@ -217,7 +329,7 @@ tell me which helpers are activated
 
 ---
 
-## 3. Building Your Personal Context Portfolio
+## 4. Building Your Personal Context Portfolio
 
 Before Genesis can help your business, the AI needs to understand **you** — your role, your goals, how you think, and what matters to you. The Personal Context Portfolio is a set of 10 markdown files that serve as your "operating manual" for any AI system.
 
@@ -321,7 +433,7 @@ what matters most to me: [YOUR ANSWER]. For communication style, I prefer
 
 ---
 
-## 4. Building Your Knowledge Base
+## 5. Building Your Knowledge Base
 
 Now that the AI understands you, it needs to understand your **business**. The knowledge base turns all your documents, transcripts, and data into a searchable system that understands meaning — not just keywords.
 
@@ -342,22 +454,33 @@ add ruvnet/ruvector upstream submodule to this project
 
 This gives the AI the vector database, embedding engine, and search infrastructure.
 
-### Step 2: Organize your source files
+### Step 2: Put your files in kb-inputs/
 
-Put your files into folders by type. The folder names become automatic categories — no manual tagging needed. For example:
+Create a folder called `kb-inputs/` in your project and put everything you want in your knowledge base there. Drag and drop files from Finder (Mac) or File Explorer (Windows) into this folder in VS Code.
 
-```
-transcripts/Sales Calls/       → tagged "sales-call"
-transcripts/Coaching/           → tagged "coaching"
-documents/Financial/            → tagged "financial"
-documents/Operations/           → tagged "operations"
-```
-
-If your files are elsewhere, tell the AI to copy them:
+Organize into subfolders by type. The subfolder names become automatic categories — no manual tagging needed:
 
 ```
-copy only the transcripts from [PATH TO YOUR RECORDINGS] into transcripts/
+kb-inputs/
+  Transcripts/Sales Calls/       → tagged "sales-call"
+  Transcripts/Coaching/           → tagged "coaching"
+  Financial/                      → tagged "financial"
+  Operations/                     → tagged "operations"
+  Marketing/                      → tagged "marketing"
 ```
+
+If your files need reorganizing, ask Claude Code to help:
+
+```
+look at everything in kb-inputs/ and propose a better folder structure.
+Don't implement — write the plan as a markdown document.
+```
+
+> **Important:** Tell Claude Code to keep these files out of GitHub:
+> ```
+> add kb-inputs/ to the .gitignore so it is not uploaded to GitHub
+> ```
+
 
 ### Step 3: Install the skills
 
@@ -376,11 +499,10 @@ Paste this prompt, replacing the bracketed paths:
 
 ```
 use the '.claude/skills/ruvector-setup' to figure out the right setup that
-allows me to achieve my project goals.
+allows me to achieve my project goals [PATH TO PROJECT GOALS].  Make sure to create a persistent ruvector REDB and explain to the user where it is and how to use it (using natural language commands).  Add to .claude memory to call this "kb" or "knowledgebase".
 
 All of the context needs to be loaded in, including everything in
-[PATH TO YOUR DOCS], [PATH TO YOUR TRANSCRIPTS], and [PATH TO ANY OTHER DOCS]
-(many different kinds of files).
+kb-inputs/ (many different kinds of files).
 
 First create ADR(s) and DDD(s). Don't implement yet. Put planning files
 in docs/adr/ and docs/ddd/.
@@ -412,7 +534,25 @@ benchmark, optimize, document. continue until complete.
 
 ### Step 6: Verify it works
 
-Once ingestion completes, test your knowledge base by pasting queries into Claude Code:
+Once ingestion completes, start by getting oriented. Ask Claude Code what is in your knowledge base and where it lives:
+
+```
+what is in my knowledge base?
+```
+
+```
+where is my knowledge base stored?
+```
+
+The first question gives you a summary of what was ingested — how many files, what categories, how many chunks. The second tells you where the database file lives on your machine so you know what to back up.
+
+**Check for missing content.** Review the summary. If any files or folders you expected are missing, add them to `kb-inputs/` and re-ingest:
+
+```
+I added new files to kb-inputs/. Re-ingest everything into the knowledge base.
+```
+
+**Test with real queries.** Once you are satisfied everything is loaded, test search quality:
 
 ```
 search the knowledge base for "What did [person] say about [topic]?"
@@ -465,15 +605,15 @@ Key facts about your knowledge base:
 
 **"Search results don't seem relevant"** — If results only match exact words, the semantic embedding engine did not load. Look for `ONNX embedder ready: 384d semantic embeddings` when you start. If you see `Falling back to hash-based embeddings`, the embedding model is not loading. Make sure the `ruvector/` directory exists with source code in it.
 
-**Adding new files later** — Tell Claude Code to clear and rebuild:
+**Adding new files later** — Drop new files into `kb-inputs/` and tell Claude Code:
 
 ```
-delete the knowledge base database and re-ingest all my files from scratch
+I added new files to kb-inputs/. Re-ingest everything into the knowledge base.
 ```
 
 ---
 
-## 5. Elevating Your Knowledge Base to World-Class
+## 6. Elevating Your Knowledge Base to World-Class
 
 The previous section built a functional knowledge base from your existing files. This section takes it further — using a structured methodology to make your knowledge base comprehensive, expert-sourced, and rigorously validated.
 
@@ -639,7 +779,7 @@ Save scoring reports to docs/kb-enhancement/quality-scores/
 
 ---
 
-## 6. Visualizing and Verifying Your Knowledge Base
+## 7. Visualizing and Verifying Your Knowledge Base
 
 A knowledge base you cannot see is a knowledge base you cannot trust. This step generates an interactive visualization so you can explore what is in your knowledge base, verify it is correct, and spot gaps visually.
 
@@ -692,7 +832,7 @@ Save to docs/kb-enhancement/team-verification-form.md
 
 ---
 
-## 7. The Genesis Methodology: Analyze, Plan, Build
+## 8. The Genesis Methodology: Analyze, Plan, Build
 
 With your personal context portfolio built and your knowledge base loaded, you are ready to run the Genesis methodology on your business. This is the four-step process that takes you from "here is my business" to "here is my optimized business with new tools, automations, and AI agents running."
 
@@ -829,7 +969,7 @@ Save monitoring configuration to docs/monitoring/setup.md
 
 ---
 
-## 8. Addendum: Helpful Repos and Tools
+## 9. Addendum: Helpful Repos and Tools
 
 These open-source repositories are useful companions to the Genesis workflow.
 
@@ -860,7 +1000,7 @@ docs/research/technology-recommendation.md
 
 A structured framework of markdown files that serves as a portable personal context package for AI agents — an "operating manual" so you do not have to repeatedly explain your identity, projects, goals, and preferences to different AI systems.
 
-**When to use it:** At the very beginning of your Genesis journey (covered in Section 3 of this guide). This is the foundation that makes every subsequent AI interaction more effective.
+**When to use it:** At the very beginning of your Genesis journey (covered in Section 4 of this guide). This is the foundation that makes every subsequent AI interaction more effective.
 
 ---
 
@@ -875,7 +1015,8 @@ A structured framework of markdown files that serves as a portable personal cont
 | Start Claude Code | `dsp` |
 | Resume last session | `dsp-c` |
 | Search your knowledge base | `search the knowledge base for "[your question]"` |
-| Re-ingest after adding files | `delete the knowledge base database and re-ingest all my files from scratch` |
+| Check what's in your KB | `what is in my knowledge base?` |
+| Re-ingest after adding files | `I added new files to kb-inputs/. Re-ingest everything into the knowledge base.` |
 
 ### The methodology at a glance
 
