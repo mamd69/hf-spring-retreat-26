@@ -662,7 +662,18 @@ This is the difference between "we uploaded our documents" and "we have the most
 
 Every prompt in this section uses the **goal-planner agent** (`@.claude/agents/goal/goal-planner.md`). This is a specialized AI agent installed with Ruflo that performs deep, systematic research — similar to "deep research" in ChatGPT or Gemini. It breaks complex objectives into sub-goals, evaluates multiple paths, and produces thorough, structured output. You will see it referenced at the start of every prompt below.
 
-> **Want to go faster?** These phases are independent research tasks. You can run multiple phases in parallel by opening additional terminal windows (click the **+** icon at the top of the terminal panel) and pasting different prompts into each one. For example, run Phase 1 in one terminal and Phase 2 in another simultaneously.
+> **Which phases can run in parallel?**
+>
+> | Phases | Relationship | Why |
+> |--------|-------------|-----|
+> | **Best Practices + Phase 1 + Phase 2 + Phase 3** | **Parallel** — run all at once in separate terminals | These are independent research tasks with no dependencies on each other |
+> | **Phase 4** (Completeness Audit) | **Sequential** — run after Phases 1-3 complete | The audit needs the domain scope, perspectives, and expert knowledge to evaluate gaps |
+> | **Phase 5** (Fill Gaps) | **Sequential** — run after Phase 4 | Requires the gap list from the completeness audit |
+> | **Phase 6** (Structure) | **Sequential** — run after Phase 5 | Needs all content in place before organizing |
+> | **Phase 7** (Depth) | **Sequential** — run after Phase 6 | Reviews the structure created in Phase 6 |
+> | **Phase 8** (Quality Scoring) | **Sequential** — run after Phase 7 | Scores the complete, structured, depth-verified knowledge base |
+>
+> To run parallel phases, open additional terminal windows (click the **+** icon at the top of the terminal panel) and paste different prompts into each one.
 
 > **Alternative: Use your AI chatbot instead.** Every prompt in this section can also be run as a deep research project in Claude.ai, ChatGPT, Gemini, or any AI chatbot with deep research capabilities. Copy the prompt, paste it into your chatbot, and save the output as a markdown file in `docs/kb-enhancement/`. This is a good option if you want to work on enhancement while your Claude Code terminal is busy with other tasks.
 
@@ -672,8 +683,9 @@ Before diving into the sub-phases, the single most important thing you can do is
 
 ```
 use @.claude/agents/goal/goal-planner.md to analyze my knowledge base and
-my project goals. Identify the key workflows in my business (e.g., patient
-intake, billing, marketing, operations, sales, hiring — whatever applies).
+my project goals. Identify the key workflows in my business (e.g., lead
+generation, onboarding, fulfillment, billing, marketing, operations,
+sales, hiring, customer support — whatever applies).
 
 For each key workflow:
 1. Research current industry best practices from authoritative sources
@@ -704,7 +716,7 @@ define the domain scope. For my business in [YOUR INDUSTRY], document:
 Save to docs/kb-enhancement/domain-scope.md
 ```
 
-**Why this matters:** Without clear boundaries, your knowledge base either misses critical areas or becomes bloated with irrelevant information. A pediatric practice's knowledge base has different boundaries than a real estate investment firm's, even though both might touch healthcare regulation.
+**Why this matters:** Without clear boundaries, your knowledge base either misses critical areas or becomes bloated with irrelevant information. A retail company's knowledge base has different boundaries than a professional services firm's, even though both might touch supply chain management.
 
 ### Phase 2: Perspective expansion
 
@@ -716,7 +728,7 @@ my knowledge base. Based on the domain scope in
 docs/kb-enhancement/domain-scope.md:
 
 1. At least 5 types of users who will query this knowledge base (executives,
-   clinicians, operations staff, sales team, new hires, etc.)
+   managers, operations staff, sales team, new hires, customers, etc.)
 2. At least 50 types of questions these users would ask
 3. Use cases for each user type
 4. Edge cases — unusual but important scenarios
@@ -725,7 +737,7 @@ docs/kb-enhancement/domain-scope.md:
 Save to docs/kb-enhancement/perspective-map.md
 ```
 
-**Why this matters:** If you only think about how YOU would search, you miss how your team, your patients, your investors, or your partners would search. The front desk manager asks different questions than the CFO.
+**Why this matters:** If you only think about how YOU would search, you miss how your team, your customers, your investors, or your partners would search. The operations manager asks different questions than the CFO.
 
 ### Phase 3: Expert discovery and knowledge extraction
 
@@ -737,7 +749,7 @@ from the top experts in my domain. Based on my domain scope, find the top
 100 experts across these categories:
 
 - Academic researchers and published authors
-- Practitioners and clinicians (if applicable)
+- Practitioners and hands-on operators in the field
 - Industry leaders and conference speakers
 - Authors of key books and frameworks
 - Emerging voices and innovators
@@ -750,7 +762,7 @@ Save expert profiles to docs/kb-enhancement/experts/
 Save extracted insights to docs/kb-enhancement/insights/
 ```
 
-**Why this matters:** Your internal documents capture what YOUR business knows. This step captures what the INDUSTRY knows — best practices, proven frameworks, and cutting-edge research. In the Nexadental example, this meant ingesting the American Association of Orthodontists' best practices plus proprietary industry databases. For Good Samaritan Hospital, it meant downloading 600,000+ ICD code records plus all CMS rules and regulations.
+**Why this matters:** Your internal documents capture what YOUR business knows. This step captures what the INDUSTRY knows — best practices, proven frameworks, and cutting-edge research. For example, a healthcare company might ingest professional association guidelines and regulatory databases, while an e-commerce company might pull in conversion optimization research and logistics best practices. The goal is the same: supplement your internal knowledge with the best external expertise available.
 
 ### Phase 4: Completeness audit
 
@@ -933,7 +945,7 @@ document that covers:
 Save to docs/research/business-assessment.md
 ```
 
-**What this produces:** A comprehensive analysis — not opinions, but findings grounded in your actual data and industry benchmarks. In the Nexadental case, this step compared the practice's lead response time, case acceptance rate, patient retention, and collections against AAO best practices and identified specific gaps with dollar amounts attached.
+**What this produces:** A comprehensive analysis — not opinions, but findings grounded in your actual data and industry benchmarks. This step compares your business's key metrics (response times, conversion rates, retention, revenue per customer, etc.) against industry best practices and identifies specific gaps with dollar amounts attached.
 
 > **Your domain expertise matters here.** Read the research document carefully. You know your business. The AI may surface something brilliant — or something that does not apply to your situation. Mark the findings that make sense and flag the ones that do not:
 
@@ -974,9 +986,9 @@ Don't implement yet. Put planning files in:
 
 | Document | What It Answers | Example |
 |----------|----------------|---------|
-| **ADR** (Architecture Decision Record) | "We decided to do X because of Y." | "ADR-001: Build a patient intake AI agent instead of hiring two more front desk staff, because the AI handles 24/7 coverage at 1/10th the cost." |
-| **DDD** (Domain-Driven Design) | "Here are the things in our business, how they relate, and where the boundaries are." | "A Patient has Appointments, which generate Claims, which produce Revenue. The scheduling system and the billing system are separate domains that share patient data." |
-| **Implementation Plan** | "Here is what we build first, second, third — and why in that order." | "Sprint 1: Lead response automation (highest revenue impact, lowest effort). Sprint 2: Operational dashboard (needed before Sprint 3). Sprint 3: Coding optimization (highest revenue impact, medium effort)." |
+| **ADR** (Architecture Decision Record) | "We decided to do X because of Y." | "ADR-001: Build a customer intake AI agent instead of hiring two more staff, because the AI handles 24/7 coverage at 1/10th the cost." |
+| **DDD** (Domain-Driven Design) | "Here are the things in our business, how they relate, and where the boundaries are." | "A Customer has Orders, which generate Invoices, which produce Revenue. The sales system and the billing system are separate domains that share customer data." |
+| **Implementation Plan** | "Here is what we build first, second, third — and why in that order." | "Sprint 1: Lead response automation (highest revenue impact, lowest effort). Sprint 2: Operational dashboard (needed before Sprint 3). Sprint 3: Pricing optimization (highest revenue impact, medium effort)." |
 
 Review these documents. They are your roadmap. Change anything that does not feel right — it is much easier to change a plan than to change finished software.
 
@@ -1038,7 +1050,7 @@ Set up ongoing monitoring for the deployed solutions:
 1. Track KPIs defined in the implementation plan
 2. Update dashboards nightly with fresh data
 3. Set the GNN learning goal to: [YOUR PRIMARY OPTIMIZATION TARGET,
-   e.g., "improve lead conversion rate" or "reduce claim denial rate"]
+   e.g., "improve lead conversion rate" or "reduce customer churn"]
 4. Alert me weekly with a summary of performance and any anomalies
 
 Save monitoring configuration to docs/monitoring/setup.md
