@@ -968,7 +968,29 @@ Create an interactive visualization of my knowledge base with:
    average confidence score, and maximum depth
 
 Use a simple HTML tree approach so it runs in any browser.
-Save to ui/kb-visualization/
+Save to ui/kb-visualization/ (do not implement)
+```
+
+Pro-Tip: use three.js for great 3d visualization.
+
+Once you like the concept, plan it properly before building. First, create architecture and design documents:
+
+```
+Using the visualization concept above, create ADRs and DDDs for the
+knowledge base visualization tool. Consider technology choices, data
+flow from the knowledge base to the UI, and how to keep it updated
+as the KB changes.
+
+Don't implement yet. Put planning files in:
+- docs/adrs/
+- docs/ddd/
+```
+
+Review the plans. When they look right, build it:
+
+```
+implement the KB visualization ADRs. spawn swarm, implement completely,
+test, validate, benchmark, optimize, document. continue until complete.
 ```
 
 ### What to look for
