@@ -537,11 +537,11 @@ benchmark, optimize, document. continue until complete.
 Once ingestion completes, start by getting oriented. Ask Claude Code what is in your knowledge base and where it lives:
 
 ```
-what is in my knowledge base?
+what is in my kb?
 ```
 
 ```
-where is my knowledge base stored?
+where is my kb stored?
 ```
 
 The first question gives you a summary of what was ingested — how many files, what categories, how many chunks. The second tells you where the database file lives on your machine so you know what to back up.
@@ -617,15 +617,42 @@ I added new files to kb-inputs/. Re-ingest everything into the knowledge base.
 
 The previous section built a functional knowledge base from your existing files. This section takes it further — using a structured methodology to make your knowledge base comprehensive, expert-sourced, and rigorously validated.
 
-This is the difference between "we uploaded our documents" and "we have the most complete understanding of our domain that exists." It follows eight sub-phases, each with a quality gate that must pass before moving to the next.
+This is the difference between "we uploaded our documents" and "we have the most complete understanding of our domain that exists."
 
-### Phase 2.1: Domain scoping
+Every prompt in this section uses the **goal-planner agent** (`@.claude/agents/goal/goal-planner.md`). This is a specialized AI agent installed with Ruflo that performs deep, systematic research — similar to "deep research" in ChatGPT or Gemini. It breaks complex objectives into sub-goals, evaluates multiple paths, and produces thorough, structured output. You will see it referenced at the start of every prompt below.
+
+> **Want to go faster?** These phases are independent research tasks. You can run multiple phases in parallel by opening additional terminal windows (click the **+** icon at the top of the terminal panel) and pasting different prompts into each one. For example, run Phase 1 in one terminal and Phase 2 in another simultaneously.
+
+> **Alternative: Use your AI chatbot instead.** Every prompt in this section can also be run as a deep research project in Claude.ai, ChatGPT, Gemini, or any AI chatbot with deep research capabilities. Copy the prompt, paste it into your chatbot, and save the output as a markdown file in `docs/kb-enhancement/`. This is a good option if you want to work on enhancement while your Claude Code terminal is busy with other tasks.
+
+### The most important step: Research industry best practices
+
+Before diving into the sub-phases, the single most important thing you can do is have the AI analyze your knowledge base and project goals, then research industry best practices across your key workflows and load the findings into your knowledge base. This one step transforms your KB from "what we know" to "what we know plus what the best in our industry know."
+
+```
+use @.claude/agents/goal/goal-planner.md to analyze my knowledge base and
+my project goals. Identify the key workflows in my business (e.g., patient
+intake, billing, marketing, operations, sales, hiring — whatever applies).
+
+For each key workflow:
+1. Research current industry best practices from authoritative sources
+2. Identify the top-performing benchmarks and standards
+3. Find frameworks and methodologies used by industry leaders
+4. Document what "best in class" looks like for each workflow
+
+Load all findings into the knowledge base.
+Save a summary to docs/kb-enhancement/industry-best-practices.md
+```
+
+This is the foundation that makes everything else in this section more powerful. With industry best practices loaded, the AI can compare your business against real benchmarks — not just its general training data.
+
+### Phase 1: Domain scoping
 
 Define the boundaries of what your knowledge base covers. Paste this prompt:
 
 ```
-Analyze my knowledge base and define the domain scope. For my business in
-[YOUR INDUSTRY], document:
+use @.claude/agents/goal/goal-planner.md to analyze my knowledge base and
+define the domain scope. For my business in [YOUR INDUSTRY], document:
 
 1. A formal definition of our domain and its boundaries
 2. Adjacent fields that overlap with ours
@@ -638,12 +665,14 @@ Save to docs/kb-enhancement/domain-scope.md
 
 **Why this matters:** Without clear boundaries, your knowledge base either misses critical areas or becomes bloated with irrelevant information. A pediatric practice's knowledge base has different boundaries than a real estate investment firm's, even though both might touch healthcare regulation.
 
-### Phase 2.2: Perspective expansion
+### Phase 2: Perspective expansion
 
 Map every type of person who might query your knowledge base and every type of question they might ask. Paste this prompt:
 
 ```
-Based on the domain scope in docs/kb-enhancement/domain-scope.md, map out:
+use @.claude/agents/goal/goal-planner.md to map out all perspectives on
+my knowledge base. Based on the domain scope in
+docs/kb-enhancement/domain-scope.md:
 
 1. At least 5 types of users who will query this knowledge base (executives,
    clinicians, operations staff, sales team, new hires, etc.)
@@ -657,12 +686,14 @@ Save to docs/kb-enhancement/perspective-map.md
 
 **Why this matters:** If you only think about how YOU would search, you miss how your team, your patients, your investors, or your partners would search. The front desk manager asks different questions than the CFO.
 
-### Phase 2.3: Expert discovery and knowledge extraction
+### Phase 3: Expert discovery and knowledge extraction
 
 Identify the top minds in your field and pull their knowledge into your base. Paste this prompt:
 
 ```
-Based on my domain scope, identify the top 100 experts across these categories:
+use @.claude/agents/goal/goal-planner.md to identify and extract knowledge
+from the top experts in my domain. Based on my domain scope, find the top
+100 experts across these categories:
 
 - Academic researchers and published authors
 - Practitioners and clinicians (if applicable)
@@ -680,12 +711,13 @@ Save extracted insights to docs/kb-enhancement/insights/
 
 **Why this matters:** Your internal documents capture what YOUR business knows. This step captures what the INDUSTRY knows — best practices, proven frameworks, and cutting-edge research. In the Nexadental example, this meant ingesting the American Association of Orthodontists' best practices plus proprietary industry databases. For Good Samaritan Hospital, it meant downloading 600,000+ ICD code records plus all CMS rules and regulations.
 
-### Phase 2.4: Completeness audit
+### Phase 4: Completeness audit
 
 Systematically identify what is missing. Paste this prompt:
 
 ```
-Audit the current knowledge base for gaps. Check across these dimensions:
+use @.claude/agents/goal/goal-planner.md to audit the current knowledge
+base for gaps. Check across these dimensions:
 
 1. Coverage gaps — topics in our domain scope that have no content
 2. Depth gaps — topics covered superficially that need more detail
@@ -699,13 +731,14 @@ Identify at least 30 gaps total.
 Save to docs/kb-enhancement/completeness-audit.md
 ```
 
-### Phase 2.5: Fill the gaps
+### Phase 5: Fill the gaps
 
 Address every gap identified in the audit. Paste this prompt:
 
 ```
+use @.claude/agents/goal/goal-planner.md to fill all knowledge base gaps.
 Using the completeness audit in docs/kb-enhancement/completeness-audit.md,
-fill all critical and high-importance gaps. For each gap:
+address all critical and high-importance gaps. For each gap:
 
 1. Research authoritative sources
 2. Extract relevant knowledge
@@ -717,12 +750,13 @@ Save new content to the appropriate knowledge base locations.
 Save a gap-filling log to docs/kb-enhancement/gap-filling-log.md
 ```
 
-### Phase 2.6: Structure and organize
+### Phase 6: Structure and organize
 
 Organize everything into a clean, navigable structure. Paste this prompt:
 
 ```
-Organize the full knowledge base into a clear structure following these rules:
+use @.claude/agents/goal/goal-planner.md to organize the full knowledge
+base into a clear structure following these rules:
 
 1. Maximum 9 top-level categories (this is a cognitive limit — more than 9
    becomes unnavigable)
@@ -735,12 +769,13 @@ Produce a visual map of the structure and save to
 docs/kb-enhancement/structure-map.md
 ```
 
-### Phase 2.7: Ensure depth at every node
+### Phase 7: Ensure depth at every node
 
 Make sure every endpoint in your knowledge base contains actual, useful content. Paste this prompt:
 
 ```
-Review every leaf node in the knowledge base structure. Each must contain:
+use @.claude/agents/goal/goal-planner.md to review every leaf node in the
+knowledge base structure. Each must contain:
 
 1. A clear title
 2. Substantive content (not just a placeholder)
@@ -753,12 +788,13 @@ Identify any leaf nodes that are empty or placeholder-only and fill them.
 Save the audit results to docs/kb-enhancement/depth-audit.md
 ```
 
-### Phase 2.8: Quality scoring loop
+### Phase 8: Quality scoring loop
 
 Score your knowledge base and iterate until it meets the bar. Paste this prompt:
 
 ```
-Score the knowledge base on these 6 criteria (each weighted):
+use @.claude/agents/goal/goal-planner.md to score the knowledge base on
+these 6 criteria (each weighted):
 
 1. Completeness (25%) — Does it cover the full domain scope?
 2. Accuracy (25%) — Is the information correct and well-sourced?
