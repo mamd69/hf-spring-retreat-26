@@ -14,7 +14,7 @@ Every prompt in this guide is **copy-paste ready**. When you see a block like th
 this is a prompt you paste into Claude Code
 ```
 
-Copy it exactly, replacing anything in `[BRACKETS]` with your own information.
+Copy it exactly. Anywhere you see `[BRACKETS]`, replace with your own information. Bracketed placeholders are always placed at the **end** of the prompt so you can edit them without scrolling — just paste and update the last few lines.
 
 **What you need before you start:**
 
@@ -112,15 +112,25 @@ Now write a short statement — **under 500 words** — describing what success 
 Use the following prompt template. Paste it into a document or directly into Claude Code when you reach the setup phase, replacing the bracketed sections with your own words:
 
 ```
-The goals of this project are to [BUILD/CREATE/TRANSFORM] a [WHAT — e.g., business operating system, sales engine, operational platform] for [WHO — your business name, division, or personal brand].
+The goals of this project are to build a platform for my business. I want
+to achieve my primary goal by my target timeframe. I want to achieve my
+secondary goal as well.
 
-I want to [PRIMARY FINANCIAL OR GROWTH GOAL — e.g., grow revenue to $X, reduce costs by Y%, launch Z product lines] by [TIMEFRAME]. I want to [SECONDARY GOAL — e.g., be a recognized leader in my space, build a world-class team, create passive revenue streams].
+Specifically, I want to accomplish the concrete outcomes listed below.
 
-Specifically, I want to [LIST 2–4 CONCRETE OUTCOMES — e.g., find more enterprise clients, automate onboarding, build a content engine, create investor-ready dashboards].
+I also want to be clear about what I do NOT want — see my constraints below.
 
-I also want to be clear about what I do NOT want: [LIST CONSTRAINTS — e.g., I don't want to manage a large team, I don't want to raise outside capital, I don't want to sacrifice work-life balance].
+The way I want to work is described in my operating style below.
 
-The way I want to work is [DESCRIBE YOUR IDEAL OPERATING STYLE — e.g., AI-native, lean, high-leverage, deeply hands-on in strategy but hands-off in execution].
+Action: [BUILD/CREATE/TRANSFORM]
+What I am building: [e.g., business operating system, sales engine, operational platform]
+Who this is for: [your business name, division, or personal brand]
+Primary goal: [e.g., grow revenue to $X, reduce costs by Y%, launch Z product lines]
+Timeframe: [e.g., 6 months, end of year, Q3]
+Secondary goal: [e.g., be a recognized leader in my space, build a world-class team]
+Concrete outcomes (2-4): [e.g., find more enterprise clients, automate onboarding, build a content engine]
+Constraints (what I do NOT want): [e.g., no large team, no outside capital, no sacrifice of work-life balance]
+Operating style: [e.g., AI-native, lean, high-leverage, hands-on in strategy but hands-off in execution]
 ```
 
 **Example of a completed goals statement:**
@@ -247,13 +257,9 @@ Once your project is open in VS Code, drag a folder from Finder (Mac) or File Ex
 **Important: Keep your business files out of GitHub.** Your business files should stay on your local machine — you do not want them uploaded to your GitHub repository. After adding files to your workspace, tell Claude Code to exclude them:
 
 ```
-add [FOLDER NAME] to the .gitignore so it is not uploaded to GitHub
-```
+add the following folder to the .gitignore so it is not uploaded to GitHub
 
-For example, if you dragged in a folder called "Business Files":
-
-```
-add Business Files/ to the .gitignore so it is not uploaded to GitHub
+Folder: [YOUR FOLDER NAME, e.g., Business Files/]
 ```
 
 This ensures your private business documents stay local while your project code syncs to GitHub normally.
@@ -398,18 +404,19 @@ Organize your existing documents into folders in your project. They can be anyth
 If your files are already in folders on your computer, tell the AI where they are:
 
 ```
-copy only the transcripts from [PATH TO YOUR TRANSCRIPTS FOLDER] into transcripts/
+copy only the transcripts from the folder below into transcripts/
+
+Source folder: [PATH TO YOUR TRANSCRIPTS FOLDER]
 ```
 
 ### Step 3: Create the plan
 
-Paste this prompt, replacing the bracketed paths with your actual folder paths:
+Paste this prompt:
 
 ```
 personal-context-portfolio/ defines a set of example files that I would like
 you to create by reverse engineering what you learn about me from the files
-in [PATH TO YOUR BUSINESS DOCS], the call transcripts in [PATH TO YOUR
-TRANSCRIPTS], and the documents already in [PATH TO OTHER DOCS].
+in the folders listed below.
 
 Put those new files into context-portfolio/.
 
@@ -418,6 +425,10 @@ questions to complete them.
 
 First create ADR(s) to plan this project (don't implement yet). Put planning
 files in docs/adr/.
+
+My business docs are in: [PATH TO YOUR BUSINESS DOCS]
+My call transcripts are in: [PATH TO YOUR TRANSCRIPTS]
+My other documents are in: [PATH TO OTHER DOCS]
 ```
 
 **What the AI does:**
@@ -448,9 +459,11 @@ The AI will produce an `outstanding-questions.md` file. Review it and answer the
 A 30-45 minute conversation fills most of them. Just talk to Claude Code naturally:
 
 ```
-Let me answer the outstanding questions. For goals and priorities, here is
-what matters most to me: [YOUR ANSWER]. For communication style, I prefer
-[YOUR PREFERENCES]. Update the portfolio files with my answers.
+Let me answer the outstanding questions. Update the portfolio files with
+my answers below.
+
+Goals and priorities — what matters most to me: [YOUR ANSWER]
+Communication style — I prefer: [YOUR PREFERENCES]
 ```
 
 ### What you get
@@ -536,17 +549,22 @@ This installs the pre-built skills that Claude Code uses to understand how to se
 
 ### Step 4: Plan before building
 
-Paste this prompt, replacing the bracketed paths:
+Paste this prompt:
 
 ```
 use the '.claude/skills/ruvector-setup' to figure out the right setup that
-allows me to achieve my project goals [PATH TO PROJECT GOALS].  Make sure to create a persistent ruvector REDB and explain to the user where it is and how to use it (using natural language commands).  Add to .claude memory to call this "kb" or "knowledgebase".
+allows me to achieve my project goals (path below). Make sure to create a
+persistent ruvector REDB and explain to the user where it is and how to use
+it (using natural language commands). Add to .claude memory to call this
+"kb" or "knowledgebase".
 
 All of the context needs to be loaded in, including everything in
 kb-inputs/ (many different kinds of files).
 
 First create ADR(s) and DDD(s). Don't implement yet. Put planning files
 in docs/adr/ and docs/ddd/.
+
+Project goals file: [PATH TO YOUR PROJECT GOALS FILE]
 ```
 
 **What the AI does:**
@@ -596,7 +614,9 @@ I added new files to kb-inputs/. Re-ingest everything into the knowledge base.
 **Test with real queries.** Once you are satisfied everything is loaded, test search quality:
 
 ```
-search the knowledge base for "What did [person] say about [topic]?"
+search the knowledge base for the query below
+
+Query: "What did [PERSON NAME] say about [TOPIC]?"
 ```
 
 Try different queries to test relevance:
@@ -731,7 +751,7 @@ Define the boundaries of what your knowledge base covers. Paste this prompt:
 
 ```
 use @.claude/agents/goal/goal-planner.md to analyze my knowledge base and
-define the domain scope. For my business in [YOUR INDUSTRY], document:
+define the domain scope for my business (industry specified below). Document:
 
 1. A formal definition of our domain and its boundaries
 2. Adjacent fields that overlap with ours
@@ -740,6 +760,8 @@ define the domain scope. For my business in [YOUR INDUSTRY], document:
 5. Current debates and open questions in the industry
 
 Save to docs/kb-enhancement/domain-scope.md
+
+My industry is: [YOUR INDUSTRY]
 ```
 
 **Why this matters:** Without clear boundaries, your knowledge base either misses critical areas or becomes bloated with irrelevant information. A retail company's knowledge base has different boundaries than a professional services firm's, even though both might touch supply chain management.
@@ -922,7 +944,7 @@ The visualization is a powerful tool for getting feedback from your team. Share 
 ```
 Generate a verification checklist I can send to my team. Ask them to:
 
-1. Find [3 specific topics critical to our business] in the knowledge base
+1. Find the 3 topics listed below in the knowledge base
 2. Check if the information is accurate and current
 3. Identify anything important that is missing
 4. Rate their confidence in the knowledge base on a 1-10 scale
@@ -930,6 +952,11 @@ Generate a verification checklist I can send to my team. Ask them to:
 
 Format as a simple form they can fill out in 10 minutes.
 Save to docs/kb-enhancement/team-verification-form.md
+
+3 critical topics to verify:
+1. [TOPIC 1]
+2. [TOPIC 2]
+3. [TOPIC 3]
 ```
 
 ---
@@ -963,14 +990,14 @@ Save to docs/research/business-assessment.md
 > **Your domain expertise matters here.** Read the research document carefully. You know your business. The AI may surface something brilliant — or something that does not apply to your situation. Mark the findings that make sense and flag the ones that do not:
 
 ```
-I have reviewed the research document. Here are my corrections and priorities:
+I have reviewed the research document. Update it with my corrections
+and priorities below, then research any new topics I've added.
 
-- [FINDING 1] is accurate and high priority
-- [FINDING 2] does not apply because [REASON]
-- [FINDING 3] is interesting but low priority right now
-- You missed [IMPORTANT TOPIC] — please research and add it
-
-Update the research document with my feedback.
+Corrections and priorities:
+- Finding: [FINDING 1] — Status: accurate and high priority
+- Finding: [FINDING 2] — Status: does not apply — Reason: [REASON]
+- Finding: [FINDING 3] — Status: low priority for now
+- Missing topic to add: [TOPIC]
 ```
 
 ### Step 2: Create the plan
@@ -1042,13 +1069,13 @@ Save to docs/testing/sprint-1-user-test.md
 Walk through the testing guide yourself. When you find issues:
 
 ```
-I found these issues during testing:
+I found these issues during testing. Fix the bugs and implement the
+enhancements. Test again after fixes.
 
-1. [DESCRIBE WHAT YOU DID AND WHAT WENT WRONG]
-2. [DESCRIBE ANOTHER ISSUE]
-3. [DESCRIBE SOMETHING THAT WORKS BUT COULD BE BETTER]
-
-Fix the bugs and implement the enhancement. Test again after fixes.
+Issues found:
+1. [WHAT YOU DID AND WHAT WENT WRONG]
+2. [ANOTHER ISSUE]
+3. [SOMETHING THAT WORKS BUT COULD BE BETTER]
 ```
 
 Repeat until everything works as expected. Then move to the next sprint.
@@ -1062,11 +1089,12 @@ Set up ongoing monitoring for the deployed solutions:
 
 1. Track KPIs defined in the implementation plan
 2. Update dashboards nightly with fresh data
-3. Set the GNN learning goal to: [YOUR PRIMARY OPTIMIZATION TARGET,
-   e.g., "improve lead conversion rate" or "reduce customer churn"]
+3. Set the GNN learning goal to the optimization target below
 4. Alert me weekly with a summary of performance and any anomalies
 
 Save monitoring configuration to docs/monitoring/setup.md
+
+GNN optimization target: [YOUR PRIMARY TARGET, e.g., "improve lead conversion rate" or "reduce customer churn"]
 ```
 
 ---
@@ -1082,8 +1110,10 @@ A Python utility that converts various file formats (PDFs, Word docs, Excel shee
 **When to use it:** When you have business documents in PDF, Word, or Excel format that need to be converted to Markdown before loading into your knowledge base. Markdown is the format AI tools work with best.
 
 ```
-Use markitdown to convert all PDFs and Word docs in [PATH TO YOUR FILES]
+Use markitdown to convert all PDFs and Word docs in the folder below
 into markdown format. Save the converted files to documents/converted/
+
+Source folder: [PATH TO YOUR FILES]
 ```
 
 ### [mamd69/ruvector-catalog](https://github.com/mamd69/ruvector-catalog)
@@ -1093,9 +1123,11 @@ A technology recommender system that maps problems to solutions within RuVector'
 **When to use it:** When you are in the planning phase and want to understand which AI/ML technologies are best suited for a specific business problem. Instead of guessing, the catalog matches your problem to proven solutions.
 
 ```
-use @ruvector-catalog to deeply analyze [DESCRIBE YOUR BUSINESS PROBLEM]
+use @ruvector-catalog to deeply analyze the business problem described below
 and recommend the best technology approach. Save the recommendation to
 docs/research/technology-recommendation.md
+
+Business problem: [DESCRIBE YOUR BUSINESS PROBLEM]
 ```
 
 ### [nlwhittemore/personal-context-portfolio](https://github.com/nlwhittemore/personal-context-portfolio)
@@ -1133,20 +1165,27 @@ A structured framework of markdown files that serves as a portable personal cont
 
 **Start a research phase:**
 ```
-use @"goal-planner (agent)" to evaluate [AREA] and create docs/research/[NAME].md
+use @"goal-planner (agent)" to evaluate the area below and save findings.
+
+Area to evaluate: [AREA]
+Save to: docs/research/[FILENAME].md
 ```
 
 **Create plans from research:**
 ```
-Using docs/research/[NAME].md, create detailed docs/ADRs, docs/DDDs, plus
+Using the research file below, create detailed docs/ADRs, docs/DDDs, plus
 docs/plan/implementation-plan.md that will guide me through my sprints.
 Don't implement yet.
+
+Research file: docs/research/[FILENAME].md
 ```
 
 **Build from plans:**
 ```
-implement ADR [NUMBERS]. spawn swarm, implement completely, test, validate,
-benchmark, optimize, document. continue until complete.
+implement the ADRs listed below. spawn swarm, implement completely, test,
+validate, benchmark, optimize, document. continue until complete.
+
+ADRs to implement: [ADR NUMBERS, e.g., ADR-001 through ADR-003]
 ```
 
 **Test what was built:**
