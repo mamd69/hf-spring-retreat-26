@@ -29,14 +29,15 @@ Copy it exactly, replacing anything in `[BRACKETS]` with your own information.
 ## Table of Contents
 
 1. [What Is Genesis?](#1-what-is-genesis)
-2. [Preparing Your Files](#2-preparing-your-files)
-3. [Setting Up Your Tools](#3-setting-up-your-tools)
-4. [Building Your Personal Context Portfolio](#4-building-your-personal-context-portfolio)
-5. [Building Your Knowledge Base](#5-building-your-knowledge-base)
-6. [Elevating Your Knowledge Base to World-Class](#6-elevating-your-knowledge-base-to-world-class)
-7. [Visualizing and Verifying Your Knowledge Base](#7-visualizing-and-verifying-your-knowledge-base)
-8. [The Genesis Methodology: Analyze, Plan, Build](#8-the-genesis-methodology-analyze-plan-build)
-9. [Addendum: Helpful Repos and Tools](#9-addendum-helpful-repos-and-tools)
+2. [Define Your Project Scope and Goals](#2-define-your-project-scope-and-goals)
+3. [Preparing Your Files](#3-preparing-your-files)
+4. [Setting Up Your Tools](#4-setting-up-your-tools)
+5. [Building Your Personal Context Portfolio](#5-building-your-personal-context-portfolio)
+6. [Building Your Knowledge Base](#6-building-your-knowledge-base)
+7. [Elevating Your Knowledge Base to World-Class](#7-elevating-your-knowledge-base-to-world-class)
+8. [Visualizing and Verifying Your Knowledge Base](#8-visualizing-and-verifying-your-knowledge-base)
+9. [The Genesis Methodology: Analyze, Plan, Build](#9-the-genesis-methodology-analyze-plan-build)
+10. [Addendum: Helpful Repos and Tools](#10-addendum-helpful-repos-and-tools)
 
 ---
 
@@ -92,9 +93,49 @@ Most business leaders doing Genesis have an existing business — that is a **br
 
 ---
 
-## 2. Preparing Your Files
+## 2. Define Your Project Scope and Goals
 
-If you are doing a **greenfield** project (starting from scratch), skip ahead to [Section 3: Setting Up Your Tools](#3-setting-up-your-tools).
+Before you touch any tools or files, spend 15–20 minutes getting crystal clear on **what** this Genesis project covers and **where** you want it to take you. This focus will shape every decision the AI makes on your behalf — from what it researches to what it builds.
+
+### Define Your Scope (10 mins)
+
+Determine the exact boundaries for this Genesis project. Is this for your entire business, a specific division, or your personal life and goals?
+
+**Reflection Question:** If you had a digital army of the smartest AI in the world working in one specific area of your life or business — and they knew every detail — which area would provide the highest ROI right now?
+
+Write down your answer. Be specific. "My business" is too broad for most people. "The sales and marketing engine for my consulting practice" or "Operations at my dental group's three locations" gives the AI a clear target.
+
+### Define Your Goals (10 mins)
+
+Now write a short statement — **under 500 words** — describing what success looks like for this project. Be honest, be specific, and include the outcomes that actually matter to you. This becomes a core input the AI will reference throughout the entire Genesis process.
+
+Use the following prompt template. Paste it into a document or directly into Claude Code when you reach the setup phase, replacing the bracketed sections with your own words:
+
+```
+The goals of this project are to [BUILD/CREATE/TRANSFORM] a [WHAT — e.g., business operating system, sales engine, operational platform] for [WHO — your business name, division, or personal brand].
+
+I want to [PRIMARY FINANCIAL OR GROWTH GOAL — e.g., grow revenue to $X, reduce costs by Y%, launch Z product lines] by [TIMEFRAME]. I want to [SECONDARY GOAL — e.g., be a recognized leader in my space, build a world-class team, create passive revenue streams].
+
+Specifically, I want to [LIST 2–4 CONCRETE OUTCOMES — e.g., find more enterprise clients, automate onboarding, build a content engine, create investor-ready dashboards].
+
+I also want to be clear about what I do NOT want: [LIST CONSTRAINTS — e.g., I don't want to manage a large team, I don't want to raise outside capital, I don't want to sacrifice work-life balance].
+
+The way I want to work is [DESCRIBE YOUR IDEAL OPERATING STYLE — e.g., AI-native, lean, high-leverage, deeply hands-on in strategy but hands-off in execution].
+```
+
+**Example of a completed goals statement:**
+
+> The goals of this project are to create a business operating system for the HeroForge.ai business. I want to grow the business to more than a million dollars, with more than half a million dollars in profit this year, and have a great time doing it. I want to be at the forefront of AI education and usage. I want to find more mastermind clients, more coaching clients, and more deep projects to sink my teeth into — projects that can build equity.
+>
+> I also don't want to be spread too thin, and I don't want to build a huge company. I really want to be AI-native.
+
+Your statement does not need to be long. It needs to be **true**. The AI will use this as a north star for every analysis, plan, and build it produces. If you change your mind later, you can update it — but starting with clear intent saves enormous time downstream.
+
+---
+
+## 3. Preparing Your Files
+
+If you are doing a **greenfield** project (starting from scratch), skip ahead to [Section 4: Setting Up Your Tools](#4-setting-up-your-tools).
 
 If you have an existing business with files, take 30-60 minutes to prepare before you start. This step pays for itself many times over.
 
@@ -132,7 +173,7 @@ If you are only feeding files into the knowledge base (not modifying them), you 
 
 ---
 
-## 3. Setting Up Your Tools
+## 4. Setting Up Your Tools
 
 You need four things: a GitHub account (where your project lives), a development environment (Codespace or VS Code on your desktop), Claude Code (your AI assistant), and Ruflo (the orchestration platform that coordinates multiple AI agents).
 
@@ -329,7 +370,7 @@ tell me which helpers are activated
 
 ---
 
-## 4. Building Your Personal Context Portfolio
+## 5. Building Your Personal Context Portfolio
 
 Before Genesis can help your business, the AI needs to understand **you** — your role, your goals, how you think, and what matters to you. The Personal Context Portfolio is a set of 10 markdown files that serve as your "operating manual" for any AI system.
 
@@ -433,7 +474,7 @@ what matters most to me: [YOUR ANSWER]. For communication style, I prefer
 
 ---
 
-## 5. Building Your Knowledge Base
+## 6. Building Your Knowledge Base
 
 Now that the AI understands you, it needs to understand your **business**. The knowledge base turns all your documents, transcripts, and data into a searchable system that understands meaning — not just keywords.
 
@@ -613,7 +654,7 @@ I added new files to kb-inputs/. Re-ingest everything into the knowledge base.
 
 ---
 
-## 6. Elevating Your Knowledge Base to World-Class
+## 7. Elevating Your Knowledge Base to World-Class
 
 The previous section built a functional knowledge base from your existing files. This section takes it further — using a structured methodology to make your knowledge base comprehensive, expert-sourced, and rigorously validated.
 
@@ -815,7 +856,7 @@ Save scoring reports to docs/kb-enhancement/quality-scores/
 
 ---
 
-## 7. Visualizing and Verifying Your Knowledge Base
+## 8. Visualizing and Verifying Your Knowledge Base
 
 A knowledge base you cannot see is a knowledge base you cannot trust. This step generates an interactive visualization so you can explore what is in your knowledge base, verify it is correct, and spot gaps visually.
 
@@ -868,7 +909,7 @@ Save to docs/kb-enhancement/team-verification-form.md
 
 ---
 
-## 8. The Genesis Methodology: Analyze, Plan, Build
+## 9. The Genesis Methodology: Analyze, Plan, Build
 
 With your personal context portfolio built and your knowledge base loaded, you are ready to run the Genesis methodology on your business. This is the four-step process that takes you from "here is my business" to "here is my optimized business with new tools, automations, and AI agents running."
 
@@ -1005,7 +1046,7 @@ Save monitoring configuration to docs/monitoring/setup.md
 
 ---
 
-## 9. Addendum: Helpful Repos and Tools
+## 10. Addendum: Helpful Repos and Tools
 
 These open-source repositories are useful companions to the Genesis workflow.
 
