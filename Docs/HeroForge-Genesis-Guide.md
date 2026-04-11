@@ -662,24 +662,25 @@ This is the difference between "we uploaded our documents" and "we have the most
 
 Every prompt in this section uses the **goal-planner agent** (`@.claude/agents/goal/goal-planner.md`). This is a specialized AI agent installed with Ruflo that performs deep, systematic research — similar to "deep research" in ChatGPT or Gemini. It breaks complex objectives into sub-goals, evaluates multiple paths, and produces thorough, structured output. You will see it referenced at the start of every prompt below.
 
-> **Which phases can run in parallel?**
+> **What can run in parallel?**
 >
-> | Phases | Relationship | Why |
-> |--------|-------------|-----|
-> | **Best Practices + Phase 1 + Phase 2 + Phase 3** | **Parallel** — run all at once in separate terminals | These are independent research tasks with no dependencies on each other |
-> | **Phase 4** (Completeness Audit) | **Sequential** — run after Phases 1-3 complete | The audit needs the domain scope, perspectives, and expert knowledge to evaluate gaps |
-> | **Phase 5** (Fill Gaps) | **Sequential** — run after Phase 4 | Requires the gap list from the completeness audit |
-> | **Phase 6** (Structure) | **Sequential** — run after Phase 5 | Needs all content in place before organizing |
-> | **Phase 7** (Depth) | **Sequential** — run after Phase 6 | Reviews the structure created in Phase 6 |
-> | **Phase 8** (Quality Scoring) | **Sequential** — run after Phase 7 | Scores the complete, structured, depth-verified knowledge base |
+> | Step | Relationship | Why |
+> |------|-------------|-----|
+> | **Methods 1, 2, and 3a** | **Parallel** — run all at once in separate terminals | These are independent research tasks with no dependencies on each other |
+> | **Method 3b** | **Sequential** — run after Method 3a | Uses the domain scope document created in Method 3a |
+> | **Phases 2 through 6** | **Sequential** — run in order after Phase 1 completes | Each phase depends on the output of the previous one |
 >
-> To run parallel phases, open additional terminal windows (click the **+** icon at the top of the terminal panel) and paste different prompts into each one.
+> To run parallel methods, open additional terminal windows (click the **+** icon at the top of the terminal panel) and paste different prompts into each one.
 
 > **Alternative: Use your AI chatbot instead.** Every prompt in this section can also be run as a deep research project in Claude.ai, ChatGPT, Gemini, or any AI chatbot with deep research capabilities. Copy the prompt, paste it into your chatbot, and save the output as a markdown file in `docs/kb-enhancement/`. This is a good option if you want to work on enhancement while your Claude Code terminal is busy with other tasks.
 
-### The most important step: Research industry best practices
+### Phase 1: Augmentation
 
-Before diving into the sub-phases, the single most important thing you can do is have the AI analyze your knowledge base and project goals, then research industry best practices across your key workflows and load the findings into your knowledge base. This one step transforms your KB from "what we know" to "what we know plus what the best in our industry know."
+Phase 1 enriches your knowledge base with external knowledge — industry best practices, expert insights, and structured domain analysis. It contains four methods. Methods 1, 2, and 3a can run in parallel. Method 3b must run after 3a.
+
+#### Method 1: Research industry best practices
+
+The single most important thing you can do is have the AI analyze your knowledge base and project goals, then research industry best practices across your key workflows and load the findings into your knowledge base. This one step transforms your KB from "what we know" to "what we know plus what the best in our industry know."
 
 ```
 use @.claude/agents/goal/goal-planner.md to analyze my knowledge base and
@@ -699,47 +700,7 @@ Save a summary to docs/kb-enhancement/industry-best-practices.md
 
 This is the foundation that makes everything else in this section more powerful. With industry best practices loaded, the AI can compare your business against real benchmarks — not just its general training data.
 
-### Phase 1: Domain scoping
-
-Define the boundaries of what your knowledge base covers. Paste this prompt:
-
-```
-use @.claude/agents/goal/goal-planner.md to analyze my knowledge base and
-define the domain scope. For my business in [YOUR INDUSTRY], document:
-
-1. A formal definition of our domain and its boundaries
-2. Adjacent fields that overlap with ours
-3. Sub-disciplines within our domain
-4. Historical context — how this field got to where it is today
-5. Current debates and open questions in the industry
-
-Save to docs/kb-enhancement/domain-scope.md
-```
-
-**Why this matters:** Without clear boundaries, your knowledge base either misses critical areas or becomes bloated with irrelevant information. A retail company's knowledge base has different boundaries than a professional services firm's, even though both might touch supply chain management.
-
-### Phase 2: Perspective expansion
-
-Map every type of person who might query your knowledge base and every type of question they might ask. Paste this prompt:
-
-```
-use @.claude/agents/goal/goal-planner.md to map out all perspectives on
-my knowledge base. Based on the domain scope in
-docs/kb-enhancement/domain-scope.md:
-
-1. At least 5 types of users who will query this knowledge base (executives,
-   managers, operations staff, sales team, new hires, customers, etc.)
-2. At least 50 types of questions these users would ask
-3. Use cases for each user type
-4. Edge cases — unusual but important scenarios
-5. Interaction patterns — how different users search differently
-
-Save to docs/kb-enhancement/perspective-map.md
-```
-
-**Why this matters:** If you only think about how YOU would search, you miss how your team, your customers, your investors, or your partners would search. The operations manager asks different questions than the CFO.
-
-### Phase 3: Expert discovery and knowledge extraction
+#### Method 2: Expert discovery and knowledge extraction
 
 Identify the top minds in your field and pull their knowledge into your base. Paste this prompt:
 
@@ -764,7 +725,51 @@ Save extracted insights to docs/kb-enhancement/insights/
 
 **Why this matters:** Your internal documents capture what YOUR business knows. This step captures what the INDUSTRY knows — best practices, proven frameworks, and cutting-edge research. For example, a healthcare company might ingest professional association guidelines and regulatory databases, while an e-commerce company might pull in conversion optimization research and logistics best practices. The goal is the same: supplement your internal knowledge with the best external expertise available.
 
-### Phase 4: Completeness audit
+#### Method 3a: Domain scoping
+
+Define the boundaries of what your knowledge base covers. Paste this prompt:
+
+```
+use @.claude/agents/goal/goal-planner.md to analyze my knowledge base and
+define the domain scope. For my business in [YOUR INDUSTRY], document:
+
+1. A formal definition of our domain and its boundaries
+2. Adjacent fields that overlap with ours
+3. Sub-disciplines within our domain
+4. Historical context — how this field got to where it is today
+5. Current debates and open questions in the industry
+
+Save to docs/kb-enhancement/domain-scope.md
+```
+
+**Why this matters:** Without clear boundaries, your knowledge base either misses critical areas or becomes bloated with irrelevant information. A retail company's knowledge base has different boundaries than a professional services firm's, even though both might touch supply chain management.
+
+#### Method 3b: Perspective expansion
+
+> **Requires Method 3a.** This method uses the domain scope document created in Method 3a. Run it after Method 3a completes.
+
+Map every type of person who might query your knowledge base and every type of question they might ask. Paste this prompt:
+
+```
+use @.claude/agents/goal/goal-planner.md to map out all perspectives on
+my knowledge base. Based on the domain scope in
+docs/kb-enhancement/domain-scope.md:
+
+1. At least 5 types of users who will query this knowledge base (executives,
+   managers, operations staff, sales team, new hires, customers, etc.)
+2. At least 50 types of questions these users would ask
+3. Use cases for each user type
+4. Edge cases — unusual but important scenarios
+5. Interaction patterns — how different users search differently
+
+Save to docs/kb-enhancement/perspective-map.md
+```
+
+**Why this matters:** If you only think about how YOU would search, you miss how your team, your customers, your investors, or your partners would search. The operations manager asks different questions than the CFO.
+
+### Phase 2: Completeness audit
+
+> **Requires Phase 1.** Run after all four augmentation methods complete.
 
 Systematically identify what is missing. Paste this prompt:
 
@@ -784,7 +789,9 @@ Identify at least 30 gaps total.
 Save to docs/kb-enhancement/completeness-audit.md
 ```
 
-### Phase 5: Fill the gaps
+### Phase 3: Fill the gaps
+
+> **Requires Phase 2.** Uses the gap list from the completeness audit.
 
 Address every gap identified in the audit. Paste this prompt:
 
@@ -803,7 +810,9 @@ Save new content to the appropriate knowledge base locations.
 Save a gap-filling log to docs/kb-enhancement/gap-filling-log.md
 ```
 
-### Phase 6: Structure and organize
+### Phase 4: Structure and organize
+
+> **Requires Phase 3.** Needs all content in place before organizing.
 
 Organize everything into a clean, navigable structure. Paste this prompt:
 
@@ -822,7 +831,9 @@ Produce a visual map of the structure and save to
 docs/kb-enhancement/structure-map.md
 ```
 
-### Phase 7: Ensure depth at every node
+### Phase 5: Ensure depth at every node
+
+> **Requires Phase 4.** Reviews the structure created in Phase 4.
 
 Make sure every endpoint in your knowledge base contains actual, useful content. Paste this prompt:
 
@@ -841,7 +852,9 @@ Identify any leaf nodes that are empty or placeholder-only and fill them.
 Save the audit results to docs/kb-enhancement/depth-audit.md
 ```
 
-### Phase 8: Quality scoring loop
+### Phase 6: Quality scoring loop
+
+> **Requires Phase 5.** Scores the complete, structured, depth-verified knowledge base.
 
 Score your knowledge base and iterate until it meets the bar. Paste this prompt:
 
