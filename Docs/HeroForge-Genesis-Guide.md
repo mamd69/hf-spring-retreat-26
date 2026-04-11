@@ -135,7 +135,7 @@ Operating style: [e.g., AI-native, lean, high-leverage, hands-on in strategy but
 
 **Example of a completed goals statement:**
 
-> The goals of this project are to create a business operating system for the HeroForge.ai business. I want to grow the business to more than a million dollars, with more than half a million dollars in profit this year, and have a great time doing it. I want to be at the forefront of AI education and usage. I want to find more mastermind clients, more coaching clients, and more deep projects to sink my teeth into — projects that can build equity.
+> The goals of this project are to create a business operating system for the HeroForge.ai business. I want to grow the business to more than ten million dollars in profit this year (up from $1M/yr run rate end of last year), and have a great time doing it. I want to be at the forefront of AI education and usage. I want to find more mastermind clients, more coaching clients, and more deep projects to sink my teeth into — projects that can build equity.
 >
 > I also don't want to be spread too thin, and I don't want to build a huge company. I really want to be AI-native.
 
@@ -714,7 +714,6 @@ For each key workflow:
 3. Find frameworks and methodologies used by industry leaders
 4. Document what "best in class" looks like for each workflow
 
-Load all findings into the knowledge base.
 Save a summary to docs/kb-enhancement/industry-best-practices.md
 ```
 
@@ -789,6 +788,14 @@ Save to docs/kb-enhancement/perspective-map.md
 
 **Why this matters:** If you only think about how YOU would search, you miss how your team, your customers, your investors, or your partners would search. The operations manager asks different questions than the CFO.
 
+#### Ingest Phase 1 results into your knowledge base
+
+After all four methods complete, load everything they produced into your knowledge base so subsequent phases can search and build on it:
+
+```
+Ingest all files in docs/kb-enhancement/ into the knowledge base.
+```
+
 ### Phase 2: Completeness audit
 
 > **Requires Phase 1.** Run after all four augmentation methods complete.
@@ -832,6 +839,12 @@ Save new content to the appropriate knowledge base locations.
 Save a gap-filling log to docs/kb-enhancement/gap-filling-log.md
 ```
 
+After the gaps are filled, ingest the new content:
+
+```
+Ingest all new files in docs/kb-enhancement/ into the knowledge base.
+```
+
 ### Phase 4: Structure and organize
 
 > **Requires Phase 3.** Needs all content in place before organizing.
@@ -853,6 +866,17 @@ Produce a visual map of the structure and save to
 docs/kb-enhancement/structure-map.md
 ```
 
+After the structure map is produced, review it and ask the AI whether the knowledge base itself should be restructured to match:
+
+```
+Based on the structure map in docs/kb-enhancement/structure-map.md,
+should we restructure the knowledge base to match this organization?
+Show me what would change and why. Don't implement yet — I want to
+review the proposal and ask questions about anything I don't understand.
+```
+
+Review the proposal carefully. Ask questions about any recommended changes that are unclear — you know your business better than the AI does. Once you are satisfied, tell it to proceed or tell it what to skip.
+
 ### Phase 5: Ensure depth at every node
 
 > **Requires Phase 4.** Reviews the structure created in Phase 4.
@@ -872,6 +896,12 @@ knowledge base structure. Each must contain:
 
 Identify any leaf nodes that are empty or placeholder-only and fill them.
 Save the audit results to docs/kb-enhancement/depth-audit.md
+```
+
+After the depth audit fills in missing content, ingest it:
+
+```
+Ingest all new files in docs/kb-enhancement/ into the knowledge base.
 ```
 
 ### Phase 6: Quality scoring loop
@@ -898,6 +928,22 @@ Repeat until the overall score is 98 or above.
 
 Save scoring reports to docs/kb-enhancement/quality-scores/
 ```
+
+#### Continuous improvement: the analyze-enhance-ingest loop
+
+Phase 6 is not a one-time event. Any time you want to improve your knowledge base — after learning something new, after a business change, or just periodically — repeat this three-step loop:
+
+1. **Analyze** the knowledge base to identify what is missing or weak
+2. **Create** enhancement content and save it to `docs/kb-enhancement/`
+3. **Ingest** the new content into the knowledge base
+
+```
+Analyze my knowledge base for weaknesses or gaps. Create enhancement
+content addressing the most important issues and save to
+docs/kb-enhancement/. Then ingest those files into the knowledge base.
+```
+
+This loop compounds over time. Each cycle makes the knowledge base smarter, which makes the next analysis more insightful, which produces better enhancements.
 
 > **What "world-class" looks like:** When this process is complete, your knowledge base does not just contain your documents — it contains your documents, your industry's best practices, the frameworks of the top 100 experts in your field, and a verified, structured, gap-free knowledge architecture. This is what Genesis uses to produce analyses that rival $100,000 consulting engagements.
 
