@@ -6,7 +6,7 @@
 
 ## How to Use This Guide
 
-This guide is designed to be followed in order, from start to finish. Each section builds on the one before it. You will set up your tools, teach the AI about yourself and your business, build a searchable knowledge base, and then use that foundation to analyze, plan, and build.
+This guide is designed to be followed in order, from start to finish. Each section builds on the one before it. You will set up your tools, define your project, prepare your files, build a searchable knowledge base, and then use that foundation to analyze, plan, and build.
 
 Every prompt in this guide is **copy-paste ready**. When you see a block like this:
 
@@ -24,24 +24,25 @@ Copy it exactly. Anywhere you see `[BRACKETS]`, replace with your own informatio
 - About 30 minutes for initial setup
 - Your business documents — bios, transcripts, financials, slide decks, meeting notes, whatever you have
 
+**Numbering convention:** Sections use Roman numerals (I, II, III, ...). Steps within sections use Arabic numerals (Step 1, Step 2, ...). When you see a reference like "Section V, Step 2" elsewhere in the guide, section and step numbers are distinct by numeral type so there is no ambiguity.
+
 ---
 
 ## Table of Contents
 
-1. [What Is Genesis?](#1-what-is-genesis)
-2. [Define Your Project Scope and Goals](#2-define-your-project-scope-and-goals)
-3. [Preparing Your Files](#3-preparing-your-files)
-4. [Setting Up Your Tools](#4-setting-up-your-tools)
-5. [Building Your Personal Context Portfolio](#5-building-your-personal-context-portfolio)
-6. [Building Your Knowledge Base](#6-building-your-knowledge-base)
-7. [Elevating Your Knowledge Base to World-Class](#7-elevating-your-knowledge-base-to-world-class)
-8. [Visualizing and Verifying Your Knowledge Base](#8-visualizing-and-verifying-your-knowledge-base)
-9. [The Genesis Methodology: Analyze, Plan, Build](#9-the-genesis-methodology-analyze-plan-build)
-10. [Addendum: Helpful Repos and Tools](#10-addendum-helpful-repos-and-tools)
+- [I. What Is Genesis?](#i-what-is-genesis)
+- [II. The Genesis Methodology: Analyze, Plan, Build](#ii-the-genesis-methodology-analyze-plan-build)
+- [III. Setting Up Your Tools](#iii-setting-up-your-tools)
+- [IV. Define Your Project Scope and Goals](#iv-define-your-project-scope-and-goals)
+- [V. Preparing Your Files](#v-preparing-your-files)
+- [VI. Building Your Knowledge Base](#vi-building-your-knowledge-base)
+- [VII. Elevating Your Knowledge Base to World-Class](#vii-elevating-your-knowledge-base-to-world-class)
+- [VIII. Visualizing and Verifying Your Knowledge Base](#viii-visualizing-and-verifying-your-knowledge-base)
+- [IX. Addendum: Helpful Repos and Tools](#ix-addendum-helpful-repos-and-tools)
 
 ---
 
-## 1. What Is Genesis?
+## I. What Is Genesis?
 
 Genesis is an **operating system for your business**. It is a platform that takes your business from its current state to an optimized future state by combining the most powerful AI models with a proprietary knowledge engine and coordinated teams of AI agents.
 
@@ -67,16 +68,18 @@ Genesis is not theoretical. Here is what it has built for real businesses:
 - **Good Samaritan Hospital** (medical coding): An AI coding optimization system that combines clinical reasoning with 600,000+ ICD codes and all CMS rules, identifying 10-15% revenue improvement at a $90 million hospital.
 - **Vermont Real Estate**: Financial models, investor decks, targeted buyer outreach with personalized emails to the 50 most ideal buyers — each generated automatically.
 
-### The four-step methodology
+### The four major phases
 
-Everything Genesis does follows four steps:
+Every Genesis project moves through four high-level phases:
 
 1. **Import and Digitize** — Upload your business documents, data, and institutional knowledge.
 2. **Research and Augment** — The AI researches industry best practices, competitors, and benchmarks, then adds that knowledge to your base.
 3. **Analyze and Plan** — The AI compares your current state against best practices, identifies gaps, runs simulations, and produces prioritized roadmaps.
 4. **Build and Deploy** — A coordinated team of AI agents builds the solutions — software, automations, dashboards, AI assistants — and deploys them with ongoing monitoring.
 
-This guide walks you through every step.
+This guide walks you through every phase.
+
+> **Two levels of methodology.** The four phases above describe the **major arc** of a Genesis project — the high-level journey from raw inputs to deployed solutions. Inside each phase (and inside every significant improvement cycle after) you use a smaller, reusable three-step cycle — **Analyze, Plan, Build** — to actually get work done. That reusable cycle is covered in [Section II](#ii-the-genesis-methodology-analyze-plan-build) and you will use it over and over throughout Genesis.
 
 ### Two starting points: Greenfield vs. Brownfield
 
@@ -93,97 +96,149 @@ Most business leaders doing Genesis have an existing business — that is a **br
 
 ---
 
-## 2. Define Your Project Scope and Goals
+## II. The Genesis Methodology: Analyze, Plan, Build
 
-Before you touch any tools or files, spend 15–20 minutes getting crystal clear on **what** this Genesis project covers and **where** you want it to take you. This focus will shape every decision the AI makes on your behalf — from what it researches to what it builds.
+You just saw the four major phases in Section I. This section describes the **reusable three-step cycle** — Analyze, Plan, Build — that you use inside every phase to actually make progress. You will see this pattern throughout the guide: it is how you build your knowledge base, how you enhance it, how you design new tools, and eventually how you take your business from current state to optimized future state. Learn it once, reuse it everywhere.
 
-### Define Your Scope (10 mins)
+A fourth step — **Test, fix, and enhance** — closes every loop before the next one starts.
 
-Determine the exact boundaries for this Genesis project. Is this for your entire business, a specific division, or your personal life and goals?
+> **This is reference material.** You are not executing this cycle yet — you need tools, a project scope, files, and a knowledge base first (Sections III through VI). Read this section so you know the pattern. You will apply it starting in Section VI and keep applying it long after this guide ends.
 
-**Reflection Question:** If you had a digital army of the smartest AI in the world working in one specific area of your life or business — and they knew every detail — which area would provide the highest ROI right now?
+### Step 1: Analyze (brainstorm and research)
 
-Write down your answer. Be specific. "My business" is too broad for most people. "The sales and marketing engine for my consulting practice" or "Operations at my dental group's three locations" gives the AI a clear target.
+Before designing solutions, understand the problem thoroughly. Use the goal-planner agent to evaluate your situation and produce a research document.
 
-### Define Your Goals (10 mins)
-
-Now write a short statement — **under 500 words** — describing what success looks like for this project. Be honest, be specific, and include the outcomes that actually matter to you. This becomes a core input the AI will reference throughout the entire Genesis process.
-
-Use the following prompt template. Paste it into a document or directly into Claude Code when you reach the setup phase, replacing the bracketed sections with your own words:
+Paste this prompt:
 
 ```
-The goals of this project are to build a platform for my business. I want
-to achieve my primary goal by my target timeframe. I want to achieve my
-secondary goal as well.
+use @"goal-planner (agent)" to evaluate my business based on the knowledge
+base and my project goals. Create an academic-quality research document
+that covers:
 
-Specifically, I want to accomplish the concrete outcomes listed below.
+1. Current state assessment — what is working, what is not
+2. Industry best practices versus our current practices
+3. Revenue leakage and improvement opportunities
+4. What is possible with AI that was not possible before
+5. Risks and constraints to consider
 
-I also want to be clear about what I do NOT want — see my constraints below.
-
-The way I want to work is described in my operating style below.
-
-Action: [BUILD/CREATE/TRANSFORM]
-What I am building: [e.g., business operating system, sales engine, operational platform]
-Who this is for: [your business name, division, or personal brand]
-Primary goal: [e.g., grow revenue to $X, reduce costs by Y%, launch Z product lines]
-Timeframe: [e.g., 6 months, end of year, Q3]
-Secondary goal: [e.g., be a recognized leader in my space, build a world-class team]
-Concrete outcomes (2-4): [e.g., find more enterprise clients, automate onboarding, build a content engine]
-Constraints (what I do NOT want): [e.g., no large team, no outside capital, no sacrifice of work-life balance]
-Operating style: [e.g., AI-native, lean, high-leverage, hands-on in strategy but hands-off in execution]
+Save to docs/research/business-assessment.md
 ```
 
-**Example of a completed goals statement:**
+**What this produces:** A comprehensive analysis — not opinions, but findings grounded in your actual data and industry benchmarks. This step compares your business's key metrics (response times, conversion rates, retention, revenue per customer, etc.) against industry best practices and identifies specific gaps with dollar amounts attached.
 
-> The goals of this project are to create a business operating system for the HeroForge.ai business. I want to grow the business to more than ten million dollars in profit this year (up from $1M/yr run rate end of last year), and have a great time doing it. I want to be at the forefront of AI education and usage. I want to find more mastermind clients, more coaching clients, and more deep projects to sink my teeth into — projects that can build equity.
->
-> I also don't want to be spread too thin, and I don't want to build a huge company. I really want to be AI-native.
+> **Your domain expertise matters here.** Read the research document carefully. You know your business. The AI may surface something brilliant — or something that does not apply to your situation. Mark the findings that make sense and flag the ones that do not:
 
-Your statement does not need to be long. It needs to be **true**. The AI will use this as a north star for every analysis, plan, and build it produces. If you change your mind later, you can update it — but starting with clear intent saves enormous time downstream.
+```
+I have reviewed the research document. Update it with my corrections
+and priorities below, then research any new topics I've added.
+
+Corrections and priorities:
+- Finding: [FINDING 1] — Status: accurate and high priority
+- Finding: [FINDING 2] — Status: does not apply — Reason: [REASON]
+- Finding: [FINDING 3] — Status: low priority for now
+- Missing topic to add: [TOPIC]
+```
+
+### Step 2: Plan
+
+Using the validated research, create detailed architecture decisions and an implementation plan. No building happens in this step — plans are cheap to change, code is expensive to change.
+
+Paste this prompt:
+
+```
+Using docs/research/business-assessment.md, create:
+
+1. Architecture Decision Records (ADRs) for each major initiative — what we
+   will build and why, with alternatives considered
+2. Domain-Driven Design documents (DDDs) mapping out the business entities,
+   relationships, and boundaries
+3. An implementation plan with phased sprints, ordered by value-versus-effort
+   (highest value, lowest effort first)
+
+Don't implement yet. Put planning files in:
+- docs/adrs/
+- docs/ddd/
+- docs/plan/implementation-plan.md
+```
+
+**What ADRs and DDDs are in plain language:**
+
+| Document | What It Answers | Example |
+|----------|----------------|---------|
+| **ADR** (Architecture Decision Record) | "We decided to do X because of Y." | "ADR-001: Build a customer intake AI agent instead of hiring two more staff, because the AI handles 24/7 coverage at 1/10th the cost." |
+| **DDD** (Domain-Driven Design) | "Here are the things in our business, how they relate, and where the boundaries are." | "A Customer has Orders, which generate Invoices, which produce Revenue. The sales system and the billing system are separate domains that share customer data." |
+| **Implementation Plan** | "Here is what we build first, second, third — and why in that order." | "Sprint 1: Lead response automation (highest revenue impact, lowest effort). Sprint 2: Operational dashboard (needed before Sprint 3). Sprint 3: Pricing optimization (highest revenue impact, medium effort)." |
+
+Review these documents. They are your roadmap. Change anything that does not feel right — it is much easier to change a plan than to change finished software.
+
+### Step 3: Build
+
+This is where Genesis earns its name. A coordinated team of AI agents builds everything — in parallel, overnight if needed.
+
+Paste this prompt, specifying which ADRs to implement:
+
+```
+implement ADR-001 through ADR-003. spawn swarm, implement completely, test,
+validate, benchmark, optimize, document. continue until complete.
+```
+
+**What happens behind the scenes:**
+- Multiple AI agents launch simultaneously — one writing front-end code, one writing back-end code, one writing tests, one reviewing, one documenting
+- The agents coordinate through the shared knowledge base
+- Built-in quality gates: code is not "done" until it passes tests, meets performance targets, and is documented
+- Browser automation agents test the user interface by actually clicking buttons and filling forms, like a human would
+- The cycle repeats — implement, test, validate, benchmark, optimize, document — until everything passes
+
+You do not need to manage this process. The AI orchestrates itself. You review the output.
+
+### Step 4: Test, fix, and enhance
+
+Automated tests passing does not mean the product works for real humans. This step generates a testing guide and walks you through verification.
+
+Paste this prompt:
+
+```
+Give me a user testing guide for everything built in Sprint 1. Create a
+step-by-step script: "click here, enter this, expect that." Prove to me
+that this works from a real user's perspective.
+
+Save to docs/testing/sprint-1-user-test.md
+```
+
+Walk through the testing guide yourself. When you find issues:
+
+```
+I found these issues during testing. Fix the bugs and implement the
+enhancements. Test again after fixes.
+
+Issues found:
+1. [WHAT YOU DID AND WHAT WENT WRONG]
+2. [ANOTHER ISSUE]
+3. [SOMETHING THAT WORKS BUT COULD BE BETTER]
+```
+
+Repeat until everything works as expected. Then move to the next sprint.
+
+### The ongoing cycle
+
+Genesis does not stop after the initial build. The monitoring and self-improvement loop continues:
+
+```
+Set up ongoing monitoring for the deployed solutions:
+
+1. Track KPIs defined in the implementation plan
+2. Update dashboards nightly with fresh data
+3. Set the GNN learning goal to the optimization target below
+4. Alert me weekly with a summary of performance and any anomalies
+
+Save monitoring configuration to docs/monitoring/setup.md
+
+GNN optimization target: [YOUR PRIMARY TARGET, e.g., "improve lead conversion rate" or "reduce customer churn"]
+```
 
 ---
 
-## 3. Preparing Your Files
-
-If you are doing a **greenfield** project (starting from scratch), skip ahead to [Section 4: Setting Up Your Tools](#4-setting-up-your-tools).
-
-If you have an existing business with files, take 30-60 minutes to prepare before you start. This step pays for itself many times over.
-
-### Make a backup first
-
-Before pointing AI at your business files, make a backup of your originals. Copy them to an external drive, Google Drive, or another safe location. The AI will not delete your files, but having a backup is good practice before any reorganization.
-
-### Organize by type
-
-Group your files into folders by category. Don't overthink it — the folder names become automatic categories in your knowledge base later. For example:
-
-```
-Business Files/
-  Transcripts/        — call recordings, meeting notes
-  Financial/          — P&L, tax docs, QuickBooks exports
-  Marketing/          — slide decks, brochures, website copy
-  Operations/         — SOPs, employee handbooks, policies
-  Legal/              — contracts, agreements, compliance docs
-```
-
-### Let the AI help you reorganize
-
-If your files are a mess, that is fine. One of the first things you can do is point the AI at a folder and ask it to propose an organization plan:
-
-```
-these are all of my business files. Analyze this and help me create a plan
-to reorganize this. Don't implement — write the plan as a markdown document.
-```
-
-The AI will catalog everything, identify file types, and propose a logical structure. Review the plan, adjust it, then tell the AI to implement it.
-
-### You don't always need copies
-
-If you are only feeding files into the knowledge base (not modifying them), you do not need to copy them into your project. When working locally with VS Code, you can link to your original files instead of duplicating them. This is covered in the next section under "Option B."
-
----
-
-## 4. Setting Up Your Tools
+## III. Setting Up Your Tools
 
 You need four things: a GitHub account (where your project lives), a development environment (Codespace or VS Code on your desktop), Claude Code (your AI assistant), and Ruflo (the orchestration platform that coordinates multiple AI agents).
 
@@ -251,8 +306,10 @@ Once your project is open in VS Code, drag a folder from Finder (Mac) or File Ex
 
 | Option | What It Does | When to Use It |
 |--------|-------------|----------------|
-| **Add folder to workspace** | Links to the original files. No copy is made. | When you are only reading files to feed into your knowledge base. This is the most common choice. |
-| **Copy** | Makes a duplicate inside your project. | When you plan to manipulate, reorganize, or transform the content. |
+| **Add Folder to Workspace** | Links to the original files. No copy is made. | When you are only reading files to feed into your knowledge base. This is the most common choice. |
+| **Copy Folder** | Makes a duplicate inside your project. | When you plan to manipulate, reorganize, or transform the content. |
+
+You will return to this decision in [Section V (Preparing Your Files)](#v-preparing-your-files) once you are ready to actually bring your business files in.
 
 **Important: Keep your business files out of GitHub.** Your business files should stay on your local machine — you do not want them uploaded to your GitHub repository. After adding files to your workspace, tell Claude Code to exclude them:
 
@@ -376,120 +433,112 @@ tell me which helpers are activated
 
 ---
 
-## 5. Building Your Personal Context Portfolio
+## IV. Define Your Project Scope and Goals
 
-Before Genesis can help your business, the AI needs to understand **you** — your role, your goals, how you think, and what matters to you. The Personal Context Portfolio is a set of 10 markdown files that serve as your "operating manual" for any AI system.
+With your tools in place, spend 15–20 minutes getting crystal clear on **what** this Genesis project covers and **where** you want it to take you. This focus will shape every decision the AI makes on your behalf — from what it researches to what it builds.
 
-Think of it this way: every time you start a conversation with an AI, you spend the first 10 minutes explaining who you are and what you are working on. The Personal Context Portfolio eliminates that. The AI reads your portfolio and already knows.
+### Step 1: Define your scope (10 mins)
 
-### What you need
+Determine the exact boundaries for this Genesis project. Is this for your entire business, a specific division, or your personal life and goals?
 
-- Your business documents — bios, business plans, slide decks, transcripts of calls or meetings, anything that captures who you are and what you do
-- The personal-context-portfolio repo (the AI will pull this in for you)
+**Reflection Question:** If you had a digital army of the smartest AI in the world working in one specific area of your life or business — and they knew every detail — which area would provide the highest ROI right now?
 
-### Step 1: Pull in the portfolio framework
+Write down your answer. Be specific. "My business" is too broad for most people. "The sales and marketing engine for my consulting practice" or "Operations at my dental group's three locations" gives the AI a clear target.
 
-Paste this prompt into Claude Code:
+### Step 2: Define your goals (10 mins)
 
-```
-bring this repo into this project: https://github.com/nlwhittemore/personal-context-portfolio.git
-```
+Now write a short statement — **under 500 words** — describing what success looks like for this project. Be honest, be specific, and include the outcomes that actually matter to you. This becomes a core input the AI will reference throughout the entire Genesis process.
 
-This gives the AI the templates, examples, and structure it needs to understand what it is building for you.
-
-### Step 2: Point the AI at your documents
-
-Organize your existing documents into folders in your project. They can be anything — Google Drive exports, local files, transcripts, PDFs. The AI will figure out what is useful.
-
-If your files are already in folders on your computer, tell the AI where they are:
+Use the following prompt template. Paste it into a document or directly into Claude Code, replacing the bracketed sections with your own words:
 
 ```
-copy only the transcripts from the folder below into transcripts/
+The goals of this project are to build a platform for my business. I want
+to achieve my primary goal by my target timeframe. I want to achieve my
+secondary goal as well.
 
-Source folder: [PATH TO YOUR TRANSCRIPTS FOLDER]
+Specifically, I want to accomplish the concrete outcomes listed below.
+
+I also want to be clear about what I do NOT want — see my constraints below.
+
+The way I want to work is described in my operating style below.
+
+Action: [BUILD/CREATE/TRANSFORM]
+What I am building: [e.g., business operating system, sales engine, operational platform]
+Who this is for: [your business name, division, or personal brand]
+Primary goal: [e.g., grow revenue to $X, reduce costs by Y%, launch Z product lines]
+Timeframe: [e.g., 6 months, end of year, Q3]
+Secondary goal: [e.g., be a recognized leader in my space, build a world-class team]
+Concrete outcomes (2-4): [e.g., find more enterprise clients, automate onboarding, build a content engine]
+Constraints (what I do NOT want): [e.g., no large team, no outside capital, no sacrifice of work-life balance]
+Operating style: [e.g., AI-native, lean, high-leverage, hands-on in strategy but hands-off in execution]
 ```
 
-### Step 3: Create the plan
+**Example of a completed goals statement:**
 
-Paste this prompt:
+> The goals of this project are to create a business operating system for the HeroForge.ai business. I want to grow the business to more than ten million dollars in profit this year (up from $1M/yr run rate end of last year), and have a great time doing it. I want to be at the forefront of AI education and usage. I want to find more mastermind clients, more coaching clients, and more deep projects to sink my teeth into — projects that can build equity.
+>
+> I also don't want to be spread too thin, and I don't want to build a huge company. I really want to be AI-native.
 
-```
-personal-context-portfolio/ defines a set of example files that I would like
-you to create by reverse engineering what you learn about me from the files
-in the folders listed below.
+Your statement does not need to be long. It needs to be **true**. The AI will use this as a north star for every analysis, plan, and build it produces. If you change your mind later, you can update it — but starting with clear intent saves enormous time downstream.
 
-Put those new files into context-portfolio/.
-
-Do your best to create the files and also provide a list of outstanding
-questions to complete them.
-
-First create ADR(s) to plan this project (don't implement yet). Put planning
-files in docs/adr/.
-
-My business docs are in: [PATH TO YOUR BUSINESS DOCS]
-My call transcripts are in: [PATH TO YOUR TRANSCRIPTS]
-My other documents are in: [PATH TO OTHER DOCS]
-```
-
-**What the AI does:**
-- Reads the portfolio templates to understand the 10-file structure
-- Catalogs all your source materials
-- Maps which of your documents feed which portfolio files
-- Assesses what it can draft versus what needs your input
-- Produces planning documents before touching anything
-
-### Step 4: Review the plan, then build
-
-Read the planning documents the AI created in `docs/adr/`. When they look right, paste this:
-
-```
-spawn swarm, implement completely, continue until complete.
-```
-
-The AI will generate all 10 portfolio files in parallel, pulling from your source materials and marking gaps with `[NEEDS INPUT]` where it does not have enough information.
-
-### Step 5: Fill the gaps
-
-The AI will produce an `outstanding-questions.md` file. Review it and answer the questions — especially those marked `[CRITICAL]`. The highest-impact gaps are usually:
-
-- **Goals and priorities** — tradeoffs and what you are NOT doing
-- **Communication style** — how you write, what you dislike in AI output
-- **Preferences and constraints** — your schedule, hard rules, frustrations
-
-A 30-45 minute conversation fills most of them. Just talk to Claude Code naturally:
-
-```
-Let me answer the outstanding questions. Update the portfolio files with
-my answers below.
-
-Goals and priorities — what matters most to me: [YOUR ANSWER]
-Communication style — I prefer: [YOUR PREFERENCES]
-```
-
-### What you get
-
-10 markdown files that any AI system can read to understand you:
-
-| File | What It Captures |
-|------|-----------------|
-| `identity.md` | Who you are, what you do, what you are known for |
-| `role-and-responsibilities.md` | What your weeks look like operationally |
-| `current-projects.md` | Active workstreams with status and collaborators |
-| `goals-and-priorities.md` | What you are optimizing for and what you are NOT doing |
-| `team-and-relationships.md` | Key people and how you work with them |
-| `tools-and-systems.md` | Your tech stack and data sources |
-| `communication-style.md` | How you write, speak, and what you dislike in AI output |
-| `preferences-and-constraints.md` | Hard rules, schedule, strong opinions |
-| `domain-knowledge.md` | Your expertise, terminology, frameworks |
-| `decision-log.md` | How you decide, with real examples |
-
-> **Tip:** Update your portfolio quarterly or after any major change. A portfolio with `[NEEDS INPUT]` markers is still 10x more useful than no portfolio at all.
+Save this statement to a file in your project (for example, `docs/project-goals.md`). You will reference this path in later sections.
 
 ---
 
-## 6. Building Your Knowledge Base
+## V. Preparing Your Files
 
-Now that the AI understands you, it needs to understand your **business**. The knowledge base turns all your documents, transcripts, and data into a searchable system that understands meaning — not just keywords.
+If you are doing a **greenfield** project (starting from scratch), skip ahead to [Section VI: Building Your Knowledge Base](#vi-building-your-knowledge-base).
+
+If you have an existing business with files, take 30-60 minutes to prepare before you start. This step pays for itself many times over.
+
+### Make a backup first
+
+Before pointing AI at your business files, make a backup of your originals. Copy them to an external drive, Google Drive, or another safe location. The AI will not delete your files, but having a backup is good practice before any reorganization.
+
+### Organize by type
+
+Group your files into folders by category. Don't overthink it — the folder names become automatic categories in your knowledge base later. For example:
+
+```
+Business Files/
+  Transcripts/        — call recordings, meeting notes
+  Financial/          — P&L, tax docs, QuickBooks exports
+  Marketing/          — slide decks, brochures, website copy
+  Operations/         — SOPs, employee handbooks, policies
+  Legal/              — contracts, agreements, compliance docs
+```
+
+### Let the AI help you reorganize
+
+If your files are a mess, that is fine. One of the first things you can do is point the AI at a folder and ask it to propose an organization plan:
+
+```
+these are all of my business files. Analyze this and help me create a plan
+to reorganize this. Don't implement — write the plan as a markdown document.
+```
+
+The AI will catalog everything, identify file types, and propose a logical structure. Review the plan, adjust it, then tell the AI to implement it.
+
+### Reference or copy: two ways to bring files into your project
+
+Once your files are organized on your computer, you have a choice about how to bring them into your VS Code project.
+
+**If your files are already well organized, the simpler option is to reference them** — no duplication, no extra disk space, and no risk of working from a stale copy. You only need to actually copy files into your project when you plan to transform or manipulate them (for example, converting PDFs to markdown inside the project).
+
+To bring files in from Finder (Mac) or File Explorer (Windows), **drag and drop the folder into the VS Code Explorer panel** (the left sidebar). VS Code will ask what you want to do:
+
+| Action | What It Does | When to Use It |
+|--------|-------------|----------------|
+| **Add Folder to Workspace** | Links to the original folder in place. No copy is made. The files appear in your VS Code sidebar and the AI can read them, but they live in their original location. | **Default choice for well-organized files you only want to read and ingest into your knowledge base.** |
+| **Copy Folder** | Makes a duplicate inside your project. The originals stay where they are; the copy lives inside the project. | When you plan to reorganize, transform, or modify files inside the project (for example, converting PDFs to markdown for ingestion). |
+
+> **Heads up:** If you choose **Add Folder to Workspace**, the original files stay outside your project directory. Make sure you add those paths to your `.gitignore` anyway (if they live inside the project root) so nothing private ever gets committed to GitHub.
+
+---
+
+## VI. Building Your Knowledge Base
+
+The knowledge base turns all your documents, transcripts, and data into a searchable system that understands meaning — not just keywords.
 
 Ask about "cost structure" and it finds results about "pricing" and "fee schedule." Ask "what did Dr. Smith say about patient retention?" and it finds the exact conversation, even if those words were never used together.
 
@@ -508,14 +557,18 @@ add ruvnet/ruvector upstream submodule to this project
 
 This gives the AI the vector database, embedding engine, and search infrastructure.
 
-### Step 2: Put your files in kb-inputs/
+### Step 2: Get your files ready (two options)
 
-Create a folder called `kb-inputs/` in your project and put everything you want in your knowledge base there. Drag and drop files from Finder (Mac) or File Explorer (Windows) into this folder in VS Code.
+You have two ways to feed files into your knowledge base. You can mix and match — some folders in `kb-inputs/`, others referenced.
 
-Organize into subfolders by type. The subfolder names become automatic categories — no manual tagging needed:
+**Option A — Put everything in `kb-inputs/`.** Create a folder called `kb-inputs/` in your project and drop files or entire folders into it via VS Code. Simple and self-contained.
+
+**Option B — Reference your existing organized folders.** If you already prepared your files in [Section V](#v-preparing-your-files) using **Add Folder to Workspace**, you do not need to move or copy them. They are already accessible from your VS Code workspace. You will point the AI at those paths in Step 4.
+
+Either way, organize into subfolders by type — the subfolder names become automatic categories, no manual tagging needed:
 
 ```
-kb-inputs/
+kb-inputs/ (or your referenced folder)
   Transcripts/Sales Calls/       → tagged "sales-call"
   Transcripts/Coaching/           → tagged "coaching"
   Financial/                      → tagged "financial"
@@ -526,15 +579,17 @@ kb-inputs/
 If your files need reorganizing, ask Claude Code to help:
 
 ```
-look at everything in kb-inputs/ and propose a better folder structure.
-Don't implement — write the plan as a markdown document.
+look at everything in kb-inputs/ (and the referenced folders listed below)
+and propose a better folder structure. Don't implement — write the plan
+as a markdown document.
+
+Referenced folders: [LIST ANY REFERENCED FOLDER PATHS, or write "none"]
 ```
 
-> **Important:** Tell Claude Code to keep these files out of GitHub:
+> **Important:** Tell Claude Code to keep `kb-inputs/` out of GitHub:
 > ```
 > add kb-inputs/ to the .gitignore so it is not uploaded to GitHub
 > ```
-
 
 ### Step 3: Install the skills
 
@@ -553,18 +608,27 @@ Paste this prompt:
 
 ```
 use the '.claude/skills/ruvector-setup' to figure out the right setup that
-allows me to achieve my project goals (path below). Make sure to create a
-persistent ruvector REDB and explain to the user where it is and how to use
-it (using natural language commands). Add to .claude memory to call this
-"kb" or "knowledgebase".
+allows me to achieve my project goals (path below).
 
-All of the context needs to be loaded in, including everything in
-kb-inputs/ (many different kinds of files).
+Requirements for the knowledge base:
+- It must be a persistent, indexed vector store
+- It must be stored as a single REDB file named exactly kb.db
+- After setup, explain where kb.db lives on my machine and how to use it
+  using natural-language commands
+- Add to .claude memory to call this "kb" or "knowledge base"
+
+All of the context needs to be loaded in. I will supply content from two
+possible places — use whichever paths I list below:
+- Everything in kb-inputs/ (if I listed it below)
+- Any additional referenced folders I listed below (these are folders I
+  already have organized on my computer and added to my VS Code workspace
+  via "Add Folder to Workspace")
 
 First create ADR(s) and DDD(s). Don't implement yet. Put planning files
 in docs/adr/ and docs/ddd/.
 
 Project goals file: [PATH TO YOUR PROJECT GOALS FILE]
+Content sources (kb-inputs/ and/or referenced folder paths): [LIST PATHS]
 ```
 
 **What the AI does:**
@@ -587,13 +651,34 @@ benchmark, optimize, document. continue until complete.
 - Creates the full application — parsers for each file type, chunking logic, database wrapper, embedding engine, ingestion pipeline, search engine, and tests
 - Installs all dependencies
 - Runs tests
-- Ingests all your files
+- Ingests all your files into the `kb.db` REDB vector store
 - Runs benchmarks
 - Reports results
 
-### Step 6: Verify it works
+### Step 6: Verify the knowledge base is set up correctly
 
-Once ingestion completes, start by getting oriented. Ask Claude Code what is in your knowledge base and where it lives:
+Before you start using it, confirm the knowledge base matches the specification. Paste this prompt:
+
+```
+Verify the knowledge base is set up correctly. Confirm and show me:
+
+1. It is an indexed vector store (not plain text search or keyword-only)
+2. It is stored as a single REDB file named exactly kb.db
+3. The full path to kb.db on my machine
+4. A summary of how many files and how many chunks were ingested
+```
+
+Then lock in the shorthand so every future prompt is unambiguous:
+
+```
+add to memory: whenever I say "kb" or "knowledge base", this always
+refers to the indexed ruvector kb.db file. All search, ingest, update,
+and query operations should target that file.
+```
+
+### Step 7: Sanity-check and test
+
+Once verification passes, get oriented and test search quality. Ask Claude Code what is in your knowledge base and where it lives:
 
 ```
 what is in my kb?
@@ -603,18 +688,18 @@ what is in my kb?
 where is my kb stored?
 ```
 
-The first question gives you a summary of what was ingested — how many files, what categories, how many chunks. The second tells you where the database file lives on your machine so you know what to back up.
+The first question gives you a summary of what was ingested — how many files, what categories, how many chunks. The second tells you the full path to `kb.db` so you know what to back up.
 
-**Check for missing content.** Review the summary. If any files or folders you expected are missing, add them to `kb-inputs/` and re-ingest:
+**Check for missing content.** Review the summary. If any files or folders you expected are missing, add them (either to `kb-inputs/` or by updating your referenced folder paths) and re-ingest:
 
 ```
-I added new files to kb-inputs/. Re-ingest everything into the knowledge base.
+I added new files. Re-ingest everything into the kb.
 ```
 
 **Test with real queries.** Once you are satisfied everything is loaded, test search quality:
 
 ```
-search the knowledge base for the query below
+search the kb for the query below
 
 Query: "What did [PERSON NAME] say about [TOPIC]?"
 ```
@@ -622,15 +707,15 @@ Query: "What did [PERSON NAME] say about [TOPIC]?"
 Try different queries to test relevance:
 
 ```
-search the knowledge base for "affiliate partnerships and referrals"
+search the kb for "affiliate partnerships and referrals"
 ```
 
 ```
-search the knowledge base for "revenue from last quarter"
+search the kb for "revenue from last quarter"
 ```
 
 ```
-search the knowledge base for "patient retention strategies"
+search the kb for "patient retention strategies"
 ```
 
 You should see results ranked by relevance with source attribution — which file, which category, the date, and who said it.
@@ -641,15 +726,15 @@ A local, semantic knowledge base you control with natural language:
 
 | What to Say in Claude Code | What It Does |
 |---------|-------------|
-| `ingest all my files into the knowledge base` | Parse, chunk, embed, and store all your files |
-| `search the knowledge base for "[your question]"` | Search by meaning — ask questions in plain language |
-| `run a benchmark on the knowledge base with 10 sample queries` | Run 10 sample queries and report speed stats |
+| `ingest all my files into the kb` | Parse, chunk, embed, and store all your files into `kb.db` |
+| `search the kb for "[your question]"` | Search by meaning — ask questions in plain language |
+| `run a benchmark on the kb with 10 sample queries` | Run 10 sample queries and report speed stats |
 
 Key facts about your knowledge base:
 
 - **Runs entirely on your laptop** — no cloud, no API costs for search
 - **Understands meaning** — "cost structure" matches "pricing" and "fee schedule"
-- **Stores everything in one file** — a portable ~50MB database file
+- **Stored as a single REDB file (`kb.db`)** — a portable ~50MB database file you can back up with one copy
 - **Searches in about 200 milliseconds** per query
 - **Handles multiple file types** automatically:
 
@@ -666,15 +751,15 @@ Key facts about your knowledge base:
 
 **"Search results don't seem relevant"** — If results only match exact words, the semantic embedding engine did not load. Look for `ONNX embedder ready: 384d semantic embeddings` when you start. If you see `Falling back to hash-based embeddings`, the embedding model is not loading. Make sure the `ruvector/` directory exists with source code in it.
 
-**Adding new files later** — Drop new files into `kb-inputs/` and tell Claude Code:
+**Adding new files later** — Drop new files into `kb-inputs/` (or update your referenced folders) and tell Claude Code:
 
 ```
-I added new files to kb-inputs/. Re-ingest everything into the knowledge base.
+I added new files. Re-ingest everything into the kb.
 ```
 
 ---
 
-## 7. Elevating Your Knowledge Base to World-Class
+## VII. Elevating Your Knowledge Base to World-Class
 
 The previous section built a functional knowledge base from your existing files. This section takes it further — using a structured methodology to make your knowledge base comprehensive, expert-sourced, and rigorously validated.
 
@@ -793,7 +878,7 @@ Save to docs/kb-enhancement/perspective-map.md
 After all four methods complete, load everything they produced into your knowledge base so subsequent phases can search and build on it:
 
 ```
-Ingest all files in docs/kb-enhancement/ into the knowledge base.
+Ingest all files in docs/kb-enhancement/ into the kb.
 ```
 
 ### Phase 2: Completeness audit
@@ -842,7 +927,7 @@ Save a gap-filling log to docs/kb-enhancement/gap-filling-log.md
 After the gaps are filled, ingest the new content:
 
 ```
-Ingest all new files in docs/kb-enhancement/ into the knowledge base.
+Ingest all new files in docs/kb-enhancement/ into the kb.
 ```
 
 ### Phase 4: Structure and organize
@@ -901,7 +986,7 @@ Save the audit results to docs/kb-enhancement/depth-audit.md
 After the depth audit fills in missing content, ingest it:
 
 ```
-Ingest all new files in docs/kb-enhancement/ into the knowledge base.
+Ingest all new files in docs/kb-enhancement/ into the kb.
 ```
 
 ### Phase 6: Quality scoring loop
@@ -938,9 +1023,9 @@ Phase 6 is not a one-time event. Any time you want to improve your knowledge bas
 3. **Ingest** the new content into the knowledge base
 
 ```
-Analyze my knowledge base for weaknesses or gaps. Create enhancement
-content addressing the most important issues and save to
-docs/kb-enhancement/. Then ingest those files into the knowledge base.
+Analyze my kb for weaknesses or gaps. Create enhancement content
+addressing the most important issues and save to
+docs/kb-enhancement/. Then ingest those files into the kb.
 ```
 
 This loop compounds over time. Each cycle makes the knowledge base smarter, which makes the next analysis more insightful, which produces better enhancements.
@@ -949,7 +1034,7 @@ This loop compounds over time. Each cycle makes the knowledge base smarter, whic
 
 ---
 
-## 8. Visualizing and Verifying Your Knowledge Base
+## VIII. Visualizing and Verifying Your Knowledge Base
 
 A knowledge base you cannot see is a knowledge base you cannot trust. This step generates an interactive visualization so you can explore what is in your knowledge base, verify it is correct, and spot gaps visually.
 
@@ -958,7 +1043,7 @@ A knowledge base you cannot see is a knowledge base you cannot trust. This step 
 Paste this prompt:
 
 ```
-Create an interactive visualization of my knowledge base with:
+Create an interactive visualization of my kb with:
 
 1. An expandable/collapsible tree showing the full structure
 2. Click any node to see its full content and expert sources
@@ -978,8 +1063,7 @@ Once you like the concept, plan it properly before building. First, create archi
 ```
 Using the visualization concept above, create ADRs and DDDs for the
 knowledge base visualization tool. Consider technology choices, data
-flow from the knowledge base to the UI, and how to keep it updated
-as the KB changes.
+flow from the kb to the UI, and how to keep it updated as the kb changes.
 
 Don't implement yet. Put planning files in:
 - docs/adrs/
@@ -1029,145 +1113,7 @@ Save to docs/kb-enhancement/team-verification-form.md
 
 ---
 
-## 9. The Genesis Methodology: Analyze, Plan, Build
-
-With your personal context portfolio built and your knowledge base loaded, you are ready to run the Genesis methodology on your business. This is the four-step process that takes you from "here is my business" to "here is my optimized business with new tools, automations, and AI agents running."
-
-### Step 1: Brainstorm and research
-
-Before designing solutions, understand the problem thoroughly. Use the goal-planner agent to evaluate your situation and produce a research document.
-
-Paste this prompt:
-
-```
-use @"goal-planner (agent)" to evaluate my business based on the knowledge
-base and my personal context portfolio. Create an academic-quality research
-document that covers:
-
-1. Current state assessment — what is working, what is not
-2. Industry best practices versus our current practices
-3. Revenue leakage and improvement opportunities
-4. What is possible with AI that was not possible before
-5. Risks and constraints to consider
-
-Save to docs/research/business-assessment.md
-```
-
-**What this produces:** A comprehensive analysis — not opinions, but findings grounded in your actual data and industry benchmarks. This step compares your business's key metrics (response times, conversion rates, retention, revenue per customer, etc.) against industry best practices and identifies specific gaps with dollar amounts attached.
-
-> **Your domain expertise matters here.** Read the research document carefully. You know your business. The AI may surface something brilliant — or something that does not apply to your situation. Mark the findings that make sense and flag the ones that do not:
-
-```
-I have reviewed the research document. Update it with my corrections
-and priorities below, then research any new topics I've added.
-
-Corrections and priorities:
-- Finding: [FINDING 1] — Status: accurate and high priority
-- Finding: [FINDING 2] — Status: does not apply — Reason: [REASON]
-- Finding: [FINDING 3] — Status: low priority for now
-- Missing topic to add: [TOPIC]
-```
-
-### Step 2: Create the plan
-
-Using the validated research, create detailed architecture decisions and an implementation plan. No building happens in this step — plans are cheap to change, code is expensive to change.
-
-Paste this prompt:
-
-```
-Using docs/research/business-assessment.md, create:
-
-1. Architecture Decision Records (ADRs) for each major initiative — what we
-   will build and why, with alternatives considered
-2. Domain-Driven Design documents (DDDs) mapping out the business entities,
-   relationships, and boundaries
-3. An implementation plan with phased sprints, ordered by value-versus-effort
-   (highest value, lowest effort first)
-
-Don't implement yet. Put planning files in:
-- docs/adrs/
-- docs/ddd/
-- docs/plan/implementation-plan.md
-```
-
-**What ADRs and DDDs are in plain language:**
-
-| Document | What It Answers | Example |
-|----------|----------------|---------|
-| **ADR** (Architecture Decision Record) | "We decided to do X because of Y." | "ADR-001: Build a customer intake AI agent instead of hiring two more staff, because the AI handles 24/7 coverage at 1/10th the cost." |
-| **DDD** (Domain-Driven Design) | "Here are the things in our business, how they relate, and where the boundaries are." | "A Customer has Orders, which generate Invoices, which produce Revenue. The sales system and the billing system are separate domains that share customer data." |
-| **Implementation Plan** | "Here is what we build first, second, third — and why in that order." | "Sprint 1: Lead response automation (highest revenue impact, lowest effort). Sprint 2: Operational dashboard (needed before Sprint 3). Sprint 3: Pricing optimization (highest revenue impact, medium effort)." |
-
-Review these documents. They are your roadmap. Change anything that does not feel right — it is much easier to change a plan than to change finished software.
-
-### Step 3: Build
-
-This is where Genesis earns its name. A coordinated team of AI agents builds everything — in parallel, overnight if needed.
-
-Paste this prompt, specifying which ADRs to implement:
-
-```
-implement ADR-001 through ADR-003. spawn swarm, implement completely, test,
-validate, benchmark, optimize, document. continue until complete.
-```
-
-**What happens behind the scenes:**
-- Multiple AI agents launch simultaneously — one writing front-end code, one writing back-end code, one writing tests, one reviewing, one documenting
-- The agents coordinate through the shared knowledge base
-- Built-in quality gates: code is not "done" until it passes tests, meets performance targets, and is documented
-- Browser automation agents test the user interface by actually clicking buttons and filling forms, like a human would
-- The cycle repeats — implement, test, validate, benchmark, optimize, document — until everything passes
-
-You do not need to manage this process. The AI orchestrates itself. You review the output.
-
-### Step 4: Test, fix, and enhance
-
-Automated tests passing does not mean the product works for real humans. This step generates a testing guide and walks you through verification.
-
-Paste this prompt:
-
-```
-Give me a user testing guide for everything built in Sprint 1. Create a
-step-by-step script: "click here, enter this, expect that." Prove to me
-that this works from a real user's perspective.
-
-Save to docs/testing/sprint-1-user-test.md
-```
-
-Walk through the testing guide yourself. When you find issues:
-
-```
-I found these issues during testing. Fix the bugs and implement the
-enhancements. Test again after fixes.
-
-Issues found:
-1. [WHAT YOU DID AND WHAT WENT WRONG]
-2. [ANOTHER ISSUE]
-3. [SOMETHING THAT WORKS BUT COULD BE BETTER]
-```
-
-Repeat until everything works as expected. Then move to the next sprint.
-
-### The ongoing cycle
-
-Genesis does not stop after the initial build. The monitoring and self-improvement loop continues:
-
-```
-Set up ongoing monitoring for the deployed solutions:
-
-1. Track KPIs defined in the implementation plan
-2. Update dashboards nightly with fresh data
-3. Set the GNN learning goal to the optimization target below
-4. Alert me weekly with a summary of performance and any anomalies
-
-Save monitoring configuration to docs/monitoring/setup.md
-
-GNN optimization target: [YOUR PRIMARY TARGET, e.g., "improve lead conversion rate" or "reduce customer churn"]
-```
-
----
-
-## 10. Addendum: Helpful Repos and Tools
+## IX. Addendum: Helpful Repos and Tools
 
 These open-source repositories are useful companions to the Genesis workflow.
 
@@ -1198,12 +1144,6 @@ docs/research/technology-recommendation.md
 Business problem: [DESCRIBE YOUR BUSINESS PROBLEM]
 ```
 
-### [nlwhittemore/personal-context-portfolio](https://github.com/nlwhittemore/personal-context-portfolio)
-
-A structured framework of markdown files that serves as a portable personal context package for AI agents — an "operating manual" so you do not have to repeatedly explain your identity, projects, goals, and preferences to different AI systems.
-
-**When to use it:** At the very beginning of your Genesis journey (covered in Section 4 of this guide). This is the foundation that makes every subsequent AI interaction more effective.
-
 ---
 
 ## Quick Reference
@@ -1216,18 +1156,19 @@ A structured framework of markdown files that serves as a portable personal cont
 | Install Ruflo | `curl -fsSL https://cdn.jsdelivr.net/gh/ruvnet/claude-flow@main/scripts/install.sh \| bash -s -- --full` |
 | Start Claude Code | `dsp` |
 | Resume last session | `dsp-c` |
-| Search your knowledge base | `search the knowledge base for "[your question]"` |
-| Check what's in your KB | `what is in my knowledge base?` |
-| Re-ingest after adding files | `I added new files to kb-inputs/. Re-ingest everything into the knowledge base.` |
+| Search your knowledge base | `search the kb for "[your question]"` |
+| Check what's in your KB | `what is in my kb?` |
+| Find the KB file | `where is my kb stored?` |
+| Re-ingest after adding files | `I added new files. Re-ingest everything into the kb.` |
 
-### The methodology at a glance
+### The methodology at a glance (Section II)
 
 | Step | What You Do | What You Get |
 |------|------------|-------------|
-| **1. Brainstorm** | Run the goal-planner agent | Research document with findings |
+| **1. Analyze** | Run the goal-planner agent | Research document with findings |
 | **2. Plan** | Create ADRs, DDDs, implementation plan | A roadmap you review and approve |
 | **3. Build** | Launch the agent swarm | Working, tested software and automations |
-| **4. Validate** | Walk through the user testing guide | Verified, production-ready solutions |
+| **4. Test / fix / enhance** | Walk through the user testing guide | Verified, production-ready solutions |
 
 ### Key prompts to remember
 
