@@ -14,41 +14,42 @@ Every prompt in this guide is **copy-paste ready**. When you see a block like th
 this is a prompt you paste into Claude Code
 ```
 
-Copy it exactly. Anywhere you see `[BRACKETS]`, replace with your own information. Bracketed placeholders are always placed at the **end** of the prompt so you can edit them without scrolling — just paste and update the last few lines.
+Copy it exactly. Anywhere you see `[BRACKETS]`, replace with your own information. We try to place bracketed placeholders at the **end** of the prompt so you can edit them without scrolling — just paste and update the last few lines.
 
 **What you need before you start:**
 
 - A computer with internet access
 - An email address
-- A credit card (for Claude Code authentication)
+- A Claude Max account (Claude Pro/Team accounts are not sufficient for Genesis)
 - About 30 minutes for initial setup
 - Your business documents — bios, transcripts, financials, slide decks, meeting notes, whatever you have
 
-**Numbering convention:** Sections use Roman numerals (I, II, III, ...). Steps within sections use Arabic numerals (Step 1, Step 2, ...). When you see a reference like "Section V, Step 2" elsewhere in the guide, section and step numbers are distinct by numeral type so there is no ambiguity.
+**Numbering convention:** Top-level sections use numbers (1, 2, 3, ...). Subsections use letters (A, B, C, ...). Sequential process steps use numbered Steps (Step 1, Step 2, ...). When you see a reference like "Section 5, Step 2" elsewhere in the guide, the levels are visually distinct so there is no ambiguity.
 
 ---
 
 ## Table of Contents
 
-- [I. What Is Genesis?](#i-what-is-genesis)
-- [II. The Genesis Methodology: Analyze, Plan, Build](#ii-the-genesis-methodology-analyze-plan-build)
-- [III. Setting Up Your Tools](#iii-setting-up-your-tools)
-- [IV. Define Your Project Scope and Goals](#iv-define-your-project-scope-and-goals)
-- [V. Preparing Your Files](#v-preparing-your-files)
-- [VI. Building Your Knowledge Base](#vi-building-your-knowledge-base)
-- [VII. Elevating Your Knowledge Base to World-Class](#vii-elevating-your-knowledge-base-to-world-class)
-- [VIII. Visualizing and Verifying Your Knowledge Base](#viii-visualizing-and-verifying-your-knowledge-base)
-- [IX. Addendum: Helpful Repos and Tools](#ix-addendum-helpful-repos-and-tools)
+- [1. What Is Genesis?](#1-what-is-genesis)
+- [2. The Genesis Methodology: Analyze, Plan, Build, Verify, Enhance](#2-the-genesis-methodology-analyze-plan-build-verify-enhance)
+- [3. Setting Up Your Tools](#3-setting-up-your-tools)
+- [4. Define Your Project Scope and Goals](#4-define-your-project-scope-and-goals)
+- [5. Preparing Your Files](#5-preparing-your-files)
+- [6. Building Your Knowledge Base](#6-building-your-knowledge-base)
+- [7. Elevating Your Knowledge Base to World-Class](#7-elevating-your-knowledge-base-to-world-class)
+- [8. Visualizing and Verifying Your Knowledge Base](#8-visualizing-and-verifying-your-knowledge-base)
+- [9. Building Your Genesis Assets](#9-building-your-genesis-assets)
+- [10. Addendum: Helpful Repos and Tools](#10-addendum-helpful-repos-and-tools)
 
 ---
 
-## I. What Is Genesis?
+## 1. What Is Genesis?
 
 Genesis is an **operating system for your business**. It is a platform that takes your business from its current state to an optimized future state by combining the most powerful AI models with a proprietary knowledge engine and coordinated teams of AI agents.
 
 It is not a chatbot. It is not a single tool. Genesis **analyzes** your business, **plans** improvements, **builds** the solutions, **deploys** them, and then **monitors and self-improves** over time.
 
-### What makes it different
+### A. What makes it different
 
 Most AI tools today are static — you ask a question, you get an answer, the AI forgets you existed. Genesis is built on a three-layer knowledge engine:
 
@@ -60,7 +61,7 @@ Most AI tools today are static — you ask a question, you get an answer, the AI
 
 That third layer — the Graph Neural Network — is the key differentiator. The AI models themselves (Claude, GPT) do not learn from your interactions. They are born smart but have no memory. The GNN actually learns. Set a goal like "improve lead conversion rate" and it will analyze every interaction and optimize toward that goal over time, without human intervention.
 
-### What Genesis produces
+### B. What Genesis produces
 
 Genesis is not theoretical. Here is what it has built for real businesses:
 
@@ -68,7 +69,7 @@ Genesis is not theoretical. Here is what it has built for real businesses:
 - **Good Samaritan Hospital** (medical coding): An AI coding optimization system that combines clinical reasoning with 600,000+ ICD codes and all CMS rules, identifying 10-15% revenue improvement at a $90 million hospital.
 - **Vermont Real Estate**: Financial models, investor decks, targeted buyer outreach with personalized emails to the 50 most ideal buyers — each generated automatically.
 
-### The four major phases
+### C. The four major phases
 
 Every Genesis project moves through four high-level phases:
 
@@ -79,9 +80,9 @@ Every Genesis project moves through four high-level phases:
 
 This guide walks you through every phase.
 
-> **Two levels of methodology.** The four phases above describe the **major arc** of a Genesis project — the high-level journey from raw inputs to deployed solutions. Inside each phase (and inside every significant improvement cycle after) you use a smaller, reusable three-step cycle — **Analyze, Plan, Build** — to actually get work done. That reusable cycle is covered in [Section II](#ii-the-genesis-methodology-analyze-plan-build) and you will use it over and over throughout Genesis.
+> **Two levels of methodology.** The four phases above describe the **major arc** of a Genesis project — the high-level journey from raw inputs to deployed solutions. Inside each phase (and inside every significant improvement cycle after) you use a smaller, reusable five-step methodology — **Analyze, Plan, Build, Verify, Enhance** — to actually get work done. That reusable methodology is covered in [Section 2](#2-the-genesis-methodology-analyze-plan-build-verify-enhance) and you will use it over and over throughout Genesis.
 
-### Two starting points: Greenfield vs. Brownfield
+### D. Two starting points: Greenfield vs. Brownfield
 
 Before you begin, it helps to know which type of Genesis project you are starting:
 
@@ -96,13 +97,13 @@ Most business leaders doing Genesis have an existing business — that is a **br
 
 ---
 
-## II. The Genesis Methodology: Analyze, Plan, Build
+## 2. The Genesis Methodology: Analyze, Plan, Build, Verify, Enhance
 
-You just saw the four major phases in Section I. This section describes the **reusable three-step cycle** — Analyze, Plan, Build — that you use inside every phase to actually make progress. You will see this pattern throughout the guide: it is how you build your knowledge base, how you enhance it, how you design new tools, and eventually how you take your business from current state to optimized future state. Learn it once, reuse it everywhere.
+You just saw the four major phases in Section 1. This section describes the **reusable five-step methodology** — Analyze, Plan, Build, Verify, Enhance — that you use inside every phase to actually make progress. You will see this pattern throughout the guide: it is how you build your knowledge base, how you enhance it, how you design new tools, and eventually how you take your business from current state to optimized future state. Learn it once, reuse it everywhere.
 
-A fourth step — **Test, fix, and enhance** — closes every loop before the next one starts.
+The five steps close every loop before the next one starts. **Verify** is your job as the human in the loop — make the AI prove the work is real — and **Enhance** is where you turn something that works into something that is genuinely good.
 
-> **This is reference material.** You are not executing this cycle yet — you need tools, a project scope, files, and a knowledge base first (Sections III through VI). Read this section so you know the pattern. You will apply it starting in Section VI and keep applying it long after this guide ends.
+> **This is reference material.** You are not executing this methodology yet — you need tools, a project scope, files, and a knowledge base first (Sections 3 through 6). Read this section so you know the pattern. You will apply it starting in Section 6 and keep applying it long after this guide ends.
 
 ### Step 1: Analyze (brainstorm and research)
 
@@ -191,11 +192,11 @@ validate, benchmark, optimize, document. continue until complete.
 
 You do not need to manage this process. The AI orchestrates itself. You review the output.
 
-### Step 4: Test, fix, and enhance
+### Step 4: Verify
 
-Automated tests passing does not mean the product works for real humans. This step generates a testing guide and walks you through verification.
+This step is your job. The AI will tell you it finished. The tests will say they passed. That does not mean the product actually works for real humans — and it does not mean the AI built what it claimed to build. Your job in this step is to **review the work and make the AI prove it works**.
 
-Paste this prompt:
+First, have the AI produce a testing guide so you can walk the product end-to-end:
 
 ```
 Give me a user testing guide for everything built in Sprint 1. Create a
@@ -205,21 +206,46 @@ that this works from a real user's perspective.
 Save to docs/testing/sprint-1-user-test.md
 ```
 
-Walk through the testing guide yourself. When you find issues:
+Then actually walk through it yourself. Click the buttons. Fill the forms. Read the output. Spot-check the things the AI said it built against what is actually in the codebase.
+
+If anything is unclear or you are not convinced, push back:
 
 ```
-I found these issues during testing. Fix the bugs and implement the
-enhancements. Test again after fixes.
+Prove to me that [FEATURE OR COMPONENT] is real and working. Show me:
 
-Issues found:
+1. The exact file paths where this is implemented
+2. The tests that cover it, and the most recent test run output
+3. A live demo — run it end-to-end and show me the output
+4. Any gaps between what I asked for and what was built
+```
+
+Write down every issue, missing piece, or "that's not quite right" — you are going to hand this list to Step 5.
+
+### Step 5: Enhance
+
+Now that you have verified what actually works and what does not, close the loop: fix the bugs, fill the gaps, and push the product from "it works" to "it is good."
+
+Paste this prompt with the issues and enhancements you captured in Step 4:
+
+```
+Based on my verification below, fix the issues and implement the
+enhancements. Then re-run the user testing guide and show me that each
+item is resolved.
+
+Issues to fix:
 1. [WHAT YOU DID AND WHAT WENT WRONG]
 2. [ANOTHER ISSUE]
-3. [SOMETHING THAT WORKS BUT COULD BE BETTER]
+
+Gaps between what was requested and what was built:
+1. [MISSING PIECE]
+
+Enhancements to add (works but could be better):
+1. [SOMETHING TO IMPROVE]
 ```
 
-Repeat until everything works as expected. Then move to the next sprint.
+Loop between Step 4 and Step 5 until you are genuinely satisfied — not until the AI says it is done, but until you have personally confirmed it works and is worth shipping. Then move to the next sprint.
 
-### The ongoing cycle
+### A. The ongoing cycle
 
 Genesis does not stop after the initial build. The monitoring and self-improvement loop continues:
 
@@ -238,7 +264,7 @@ GNN optimization target: [YOUR PRIMARY TARGET, e.g., "improve lead conversion ra
 
 ---
 
-## III. Setting Up Your Tools
+## 3. Setting Up Your Tools
 
 You need four things: a GitHub account (where your project lives), a development environment (Codespace or VS Code on your desktop), Claude Code (your AI assistant), and Ruflo (the orchestration platform that coordinates multiple AI agents).
 
@@ -309,7 +335,7 @@ Once your project is open in VS Code, drag a folder from Finder (Mac) or File Ex
 | **Add Folder to Workspace** | Links to the original files. No copy is made. | When you are only reading files to feed into your knowledge base. This is the most common choice. |
 | **Copy Folder** | Makes a duplicate inside your project. | When you plan to manipulate, reorganize, or transform the content. |
 
-You will return to this decision in [Section V (Preparing Your Files)](#v-preparing-your-files) once you are ready to actually bring your business files in.
+You will return to this decision in [Section 5 (Preparing Your Files)](#5-preparing-your-files) once you are ready to actually bring your business files in.
 
 **Important: Keep your business files out of GitHub.** Your business files should stay on your local machine — you do not want them uploaded to your GitHub repository. After adding files to your workspace, tell Claude Code to exclude them:
 
@@ -404,7 +430,7 @@ Wait 1-2 minutes for installation to complete.
 
 > **If you do not have a Claude account yet:** You need either a Pro account ($20/month) plus API billing enabled at platform.claude.com, or a Max account ($100-200/month). Start with Pro + API billing unless you plan to use Claude Code daily — heavy users save money on the Max $200/month plan.
 
-### Setup complete
+### A. Setup complete
 
 You now have:
 
@@ -413,7 +439,7 @@ You now have:
 - Claude Code (your AI assistant)
 - Ruflo (your agent orchestration platform)
 
-### Getting oriented with Ruflo
+### B. Getting oriented with Ruflo
 
 You do not need to memorize commands. After setup, Ruflo works in the background — routing tasks to the right agents, learning from patterns, and coordinating work automatically. To explore what is available, paste these prompts into Claude Code one at a time:
 
@@ -433,7 +459,7 @@ tell me which helpers are activated
 
 ---
 
-## IV. Define Your Project Scope and Goals
+## 4. Define Your Project Scope and Goals
 
 With your tools in place, spend 15–20 minutes getting crystal clear on **what** this Genesis project covers and **where** you want it to take you. This focus will shape every decision the AI makes on your behalf — from what it researches to what it builds.
 
@@ -485,17 +511,17 @@ Save this statement to a file in your project (for example, `docs/project-goals.
 
 ---
 
-## V. Preparing Your Files
+## 5. Preparing Your Files
 
-If you are doing a **greenfield** project (starting from scratch), skip ahead to [Section VI: Building Your Knowledge Base](#vi-building-your-knowledge-base).
+If you are doing a **greenfield** project (starting from scratch), skip ahead to [Section 6: Building Your Knowledge Base](#6-building-your-knowledge-base).
 
 If you have an existing business with files, take 30-60 minutes to prepare before you start. This step pays for itself many times over.
 
-### Make a backup first
+### A. Make a backup first
 
 Before pointing AI at your business files, make a backup of your originals. Copy them to an external drive, Google Drive, or another safe location. The AI will not delete your files, but having a backup is good practice before any reorganization.
 
-### Organize by type
+### B. Organize by type
 
 Group your files into folders by category. Don't overthink it — the folder names become automatic categories in your knowledge base later. For example:
 
@@ -508,7 +534,7 @@ Business Files/
   Legal/              — contracts, agreements, compliance docs
 ```
 
-### Let the AI help you reorganize
+### C. Let the AI help you reorganize
 
 If your files are a mess, that is fine. One of the first things you can do is point the AI at a folder and ask it to propose an organization plan:
 
@@ -519,7 +545,7 @@ to reorganize this. Don't implement — write the plan as a markdown document.
 
 The AI will catalog everything, identify file types, and propose a logical structure. Review the plan, adjust it, then tell the AI to implement it.
 
-### Reference or copy: two ways to bring files into your project
+### D. Reference or copy: two ways to bring files into your project
 
 Once your files are organized on your computer, you have a choice about how to bring them into your VS Code project.
 
@@ -536,13 +562,13 @@ To bring files in from Finder (Mac) or File Explorer (Windows), **drag and drop 
 
 ---
 
-## VI. Building Your Knowledge Base
+## 6. Building Your Knowledge Base
 
 The knowledge base turns all your documents, transcripts, and data into a searchable system that understands meaning — not just keywords.
 
 Ask about "cost structure" and it finds results about "pricing" and "fee schedule." Ask "what did Dr. Smith say about patient retention?" and it finds the exact conversation, even if those words were never used together.
 
-### What you need
+### A. What you need
 
 - Your business documents organized into folders (transcripts, financials, meeting notes, etc.)
 - The ruvector submodule (the AI will pull this in)
@@ -563,7 +589,7 @@ You have two ways to feed files into your knowledge base. You can mix and match 
 
 **Option A — Put everything in `kb-inputs/`.** Create a folder called `kb-inputs/` in your project and drop files or entire folders into it via VS Code. Simple and self-contained.
 
-**Option B — Reference your existing organized folders.** If you already prepared your files in [Section V](#v-preparing-your-files) using **Add Folder to Workspace**, you do not need to move or copy them. They are already accessible from your VS Code workspace. You will point the AI at those paths in Step 4.
+**Option B — Reference your existing organized folders.** If you already prepared your files in [Section 5](#5-preparing-your-files) using **Add Folder to Workspace**, you do not need to move or copy them. They are already accessible from your VS Code workspace. You will point the AI at those paths in Step 4.
 
 Either way, organize into subfolders by type — the subfolder names become automatic categories, no manual tagging needed:
 
@@ -720,7 +746,7 @@ search the kb for "patient retention strategies"
 
 You should see results ranked by relevance with source attribution — which file, which category, the date, and who said it.
 
-### What you get
+### B. What you get
 
 A local, semantic knowledge base you control with natural language:
 
@@ -747,7 +773,7 @@ Key facts about your knowledge base:
 
 > **Tip:** Start with transcripts. They are the richest source of context — hours of conversation broken into searchable pieces. Financial CSVs are surprisingly useful too. Each transaction becomes a searchable sentence like "$1,499 payment from Jane Doe for Mastermind Pro on Mar 8, 2026."
 
-### Troubleshooting
+### C. Troubleshooting
 
 **"Search results don't seem relevant"** — If results only match exact words, the semantic embedding engine did not load. Look for `ONNX embedder ready: 384d semantic embeddings` when you start. If you see `Falling back to hash-based embeddings`, the embedding model is not loading. Make sure the `ruvector/` directory exists with source code in it.
 
@@ -759,7 +785,7 @@ I added new files. Re-ingest everything into the kb.
 
 ---
 
-## VII. Elevating Your Knowledge Base to World-Class
+## 7. Elevating Your Knowledge Base to World-Class
 
 The previous section built a functional knowledge base from your existing files. This section takes it further — using a structured methodology to make your knowledge base comprehensive, expert-sourced, and rigorously validated.
 
@@ -769,21 +795,21 @@ Every prompt in this section uses the **goal-planner agent** (`@.claude/agents/g
 
 > **What can run in parallel?**
 >
-> | Step | Relationship | Why |
+> | Item | Relationship | Why |
 > |------|-------------|-----|
-> | **Methods 1, 2, and 3a** | **Parallel** — run all at once in separate terminals | These are independent research tasks with no dependencies on each other |
-> | **Method 3b** | **Sequential** — run after Method 3a | Uses the domain scope document created in Method 3a |
-> | **Phases 2 through 6** | **Sequential** — run in order after Phase 1 completes | Each phase depends on the output of the previous one |
+> | **Step 1, subsections A, B, and C** | **Parallel** — run all at once in separate terminals | These are independent research tasks with no dependencies on each other |
+> | **Step 1, subsection D** | **Sequential** — run after subsection C | Uses the domain scope document created in subsection C |
+> | **Steps 2 through 6** | **Sequential** — run in order after Step 1 completes | Each step depends on the output of the previous one |
 >
-> To run parallel methods, open additional terminal windows (click the **+** icon at the top of the terminal panel) and paste different prompts into each one.
+> To run parallel subsections, open additional terminal windows (click the **+** icon at the top of the terminal panel) and paste different prompts into each one.
 
 > **Alternative: Use your AI chatbot instead.** Every prompt in this section can also be run as a deep research project in Claude.ai, ChatGPT, Gemini, or any AI chatbot with deep research capabilities. Copy the prompt, paste it into your chatbot, and save the output as a markdown file in `docs/kb-enhancement/`. This is a good option if you want to work on enhancement while your Claude Code terminal is busy with other tasks.
 
-### Phase 1: Augmentation
+### Step 1: Augmentation
 
-Phase 1 enriches your knowledge base with external knowledge — industry best practices, expert insights, and structured domain analysis. It contains four methods. Methods 1, 2, and 3a can run in parallel. Method 3b must run after 3a.
+Augmentation enriches your knowledge base with external knowledge — industry best practices, expert insights, and structured domain analysis. It contains four subsections. Subsections A, B, and C can run in parallel. Subsection D must run after C.
 
-#### Method 1: Research industry best practices
+#### A. Research industry best practices
 
 The single most important thing you can do is have the AI analyze your knowledge base and project goals, then research industry best practices across your key workflows and load the findings into your knowledge base. This one step transforms your KB from "what we know" to "what we know plus what the best in our industry know."
 
@@ -804,7 +830,7 @@ Save a summary to docs/kb-enhancement/industry-best-practices.md
 
 This is the foundation that makes everything else in this section more powerful. With industry best practices loaded, the AI can compare your business against real benchmarks — not just its general training data.
 
-#### Method 2: Expert discovery and knowledge extraction
+#### B. Expert discovery and knowledge extraction
 
 Identify the top minds in your field and pull their knowledge into your base. Paste this prompt:
 
@@ -829,7 +855,7 @@ Save extracted insights to docs/kb-enhancement/insights/
 
 **Why this matters:** Your internal documents capture what YOUR business knows. This step captures what the INDUSTRY knows — best practices, proven frameworks, and cutting-edge research. For example, a healthcare company might ingest professional association guidelines and regulatory databases, while an e-commerce company might pull in conversion optimization research and logistics best practices. The goal is the same: supplement your internal knowledge with the best external expertise available.
 
-#### Method 3a: Domain scoping
+#### C. Domain scoping
 
 Define the boundaries of what your knowledge base covers. Paste this prompt:
 
@@ -850,9 +876,9 @@ My industry is: [YOUR INDUSTRY]
 
 **Why this matters:** Without clear boundaries, your knowledge base either misses critical areas or becomes bloated with irrelevant information. A retail company's knowledge base has different boundaries than a professional services firm's, even though both might touch supply chain management.
 
-#### Method 3b: Perspective expansion
+#### D. Perspective expansion
 
-> **Requires Method 3a.** This method uses the domain scope document created in Method 3a. Run it after Method 3a completes.
+> **Requires subsection C.** This subsection uses the domain scope document created in subsection C. Run it after subsection C completes.
 
 Map every type of person who might query your knowledge base and every type of question they might ask. Paste this prompt:
 
@@ -873,17 +899,17 @@ Save to docs/kb-enhancement/perspective-map.md
 
 **Why this matters:** If you only think about how YOU would search, you miss how your team, your customers, your investors, or your partners would search. The operations manager asks different questions than the CFO.
 
-#### Ingest Phase 1 results into your knowledge base
+#### E. Ingest Step 1 results into your knowledge base
 
-After all four methods complete, load everything they produced into your knowledge base so subsequent phases can search and build on it:
+After all four subsections complete, load everything they produced into your knowledge base so subsequent steps can search and build on it:
 
 ```
 Ingest all files in docs/kb-enhancement/ into the kb.
 ```
 
-### Phase 2: Completeness audit
+### Step 2: Completeness audit
 
-> **Requires Phase 1.** Run after all four augmentation methods complete.
+> **Requires Step 1.** Run after all four augmentation subsections complete.
 
 Systematically identify what is missing. Paste this prompt:
 
@@ -903,9 +929,9 @@ Identify at least 30 gaps total.
 Save to docs/kb-enhancement/completeness-audit.md
 ```
 
-### Phase 3: Fill the gaps
+### Step 3: Fill the gaps
 
-> **Requires Phase 2.** Uses the gap list from the completeness audit.
+> **Requires Step 2.** Uses the gap list from the completeness audit.
 
 Address every gap identified in the audit. Paste this prompt:
 
@@ -930,9 +956,9 @@ After the gaps are filled, ingest the new content:
 Ingest all new files in docs/kb-enhancement/ into the kb.
 ```
 
-### Phase 4: Structure and organize
+### Step 4: Structure and organize
 
-> **Requires Phase 3.** Needs all content in place before organizing.
+> **Requires Step 3.** Needs all content in place before organizing.
 
 Organize everything into a clean, navigable structure. Paste this prompt:
 
@@ -962,9 +988,9 @@ review the proposal and ask questions about anything I don't understand.
 
 Review the proposal carefully. Ask questions about any recommended changes that are unclear — you know your business better than the AI does. Once you are satisfied, tell it to proceed or tell it what to skip.
 
-### Phase 5: Ensure depth at every node
+### Step 5: Ensure depth at every node
 
-> **Requires Phase 4.** Reviews the structure created in Phase 4.
+> **Requires Step 4.** Reviews the structure created in Step 4.
 
 Make sure every endpoint in your knowledge base contains actual, useful content. Paste this prompt:
 
@@ -989,9 +1015,9 @@ After the depth audit fills in missing content, ingest it:
 Ingest all new files in docs/kb-enhancement/ into the kb.
 ```
 
-### Phase 6: Quality scoring loop
+### Step 6: Quality scoring loop
 
-> **Requires Phase 5.** Scores the complete, structured, depth-verified knowledge base.
+> **Requires Step 5.** Scores the complete, structured, depth-verified knowledge base.
 
 Score your knowledge base and iterate until it meets the bar. Paste this prompt:
 
@@ -1014,9 +1040,9 @@ Repeat until the overall score is 98 or above.
 Save scoring reports to docs/kb-enhancement/quality-scores/
 ```
 
-#### Continuous improvement: the analyze-enhance-ingest loop
+#### A. Continuous improvement: the analyze-enhance-ingest loop
 
-Phase 6 is not a one-time event. Any time you want to improve your knowledge base — after learning something new, after a business change, or just periodically — repeat this three-step loop:
+Step 6 is not a one-time event. Any time you want to improve your knowledge base — after learning something new, after a business change, or just periodically — repeat this three-step loop:
 
 1. **Analyze** the knowledge base to identify what is missing or weak
 2. **Create** enhancement content and save it to `docs/kb-enhancement/`
@@ -1034,11 +1060,11 @@ This loop compounds over time. Each cycle makes the knowledge base smarter, whic
 
 ---
 
-## VIII. Visualizing and Verifying Your Knowledge Base
+## 8. Visualizing and Verifying Your Knowledge Base
 
 A knowledge base you cannot see is a knowledge base you cannot trust. This step generates an interactive visualization so you can explore what is in your knowledge base, verify it is correct, and spot gaps visually.
 
-### Generate the visualization
+### A. Generate the visualization
 
 Paste this prompt:
 
@@ -1077,7 +1103,7 @@ implement the KB visualization ADRs. spawn swarm, implement completely,
 test, validate, benchmark, optimize, document. continue until complete.
 ```
 
-### What to look for
+### B. What to look for
 
 Once the visualization loads in your browser, check these things:
 
@@ -1089,7 +1115,7 @@ Once the visualization loads in your browser, check these things:
 | **Search** | Try 5-10 questions your team would actually ask. Do the results make sense? |
 | **Coverage** | Think of a topic critical to your business. Can you find it in the tree? |
 
-### Verify with your team
+### C. Verify with your team
 
 The visualization is a powerful tool for getting feedback from your team. Share the URL and ask:
 
@@ -1113,11 +1139,184 @@ Save to docs/kb-enhancement/team-verification-form.md
 
 ---
 
-## IX. Addendum: Helpful Repos and Tools
+## 9. Building Your Genesis Assets
+
+Now that you have a knowledge base, **you can literally build anything**. The sky is the limit. Your knowledge base is the context engine — every asset you build uses it as the source of truth about your business, your customers, your industry, and your goals.
+
+Every asset you build follows the same five-step methodology from [Section 2](#2-the-genesis-methodology-analyze-plan-build-verify-enhance): Analyze, Plan, Build, Verify, Enhance. The only thing that changes is what you point it at.
+
+### A. What you can build — a sampling
+
+This is not an exhaustive list — it is a starting point to stretch your thinking. Pick what would move the needle for **your** business.
+
+| Category | Examples |
+|----------|----------|
+| **Sales & Growth** | AI phone agents that answer calls 24/7, lead scoring and routing systems, personalized outreach engines (e.g., emails to your 100 most ideal buyers), proposal and quote generators, sales coaching simulators |
+| **Marketing & Content** | Content engines that write blog posts and newsletters from your KB, webinar and event follow-up sequences, SEO optimization tools, social media schedulers, brand-consistent copy generators |
+| **Operations & Automation** | Operational dashboards pulling data nightly, SOP generators, workflow orchestrators, approval-routing systems, vendor management tools, regulatory compliance monitors |
+| **Customer Experience** | Customer onboarding flows, conversational AI assistants for your website or app, support ticket triage, churn-prediction systems, customer health dashboards |
+| **Finance & Reporting** | Financial models, investor decks generated on demand, client reporting automations, revenue leakage detectors, pricing optimization tools, cash-flow forecasters |
+| **Knowledge & Training** | Internal Q&A chatbots trained on your KB, new-hire onboarding assistants, training courses and curricula, meeting summarizers and action-item extractors, decision logs |
+| **Strategy & Intelligence** | Practice/business assessment reports, competitive intelligence dashboards, market-research briefs, scenario-planning simulators, OKR and goal-tracking systems |
+| **Vertical-Specific** | Medical coding optimization, real-estate investor matching, legal contract review, curriculum planners for education, compliance audits for regulated industries |
+
+If you can describe it, you can build it. If you cannot describe it, ask the AI to help you describe it first.
+
+### B. Apply the five-step methodology to any asset
+
+The same methodology from Section 2 — applied with your project goals and knowledge base as inputs. Copy-paste each prompt in order.
+
+#### Step 1: Analyze — ask what to build, then select an idea
+
+Start with an open-ended question. Let the AI surface high-value ideas grounded in your actual business:
+
+```
+Looking at my project goals and my kb, what could you build me of value
+that will help me achieve my goals? List 10-15 distinct assets I could
+build, each with:
+
+1. What it does in one sentence
+2. Which goal(s) it moves
+3. Rough value and effort (high/medium/low)
+4. Which assets are prerequisites for which others
+
+Rank them by value-to-effort ratio.
+
+Save to docs/assets/asset-ideas.md
+
+Project goals file: [PATH TO YOUR PROJECT GOALS FILE]
+```
+
+Read the list. Pick the one that resonates — usually the highest value-to-effort item, but trust your instincts. You know what will actually matter.
+
+Tell the AI which one you chose and ask for deeper research on just that idea:
+
+```
+I want to build the asset below. Before planning, do deep research:
+
+1. What exactly should this asset do — in detail?
+2. Who uses it, when, and how?
+3. What does best-in-class look like for this kind of asset?
+4. What data and integrations does it need?
+5. What are the risks or failure modes?
+
+Ground the research in my kb wherever possible.
+Save to docs/assets/[ASSET-NAME]/research.md
+
+Asset I selected: [NAME AND ONE-LINE DESCRIPTION]
+```
+
+#### Step 2: Plan — build out the plan
+
+Turn the research into a concrete architecture and implementation plan. No code yet:
+
+```
+Using docs/assets/[ASSET-NAME]/research.md, create:
+
+1. ADRs for each major design decision (what we'll build, why, and
+   alternatives considered)
+2. DDDs mapping the entities, relationships, and boundaries
+3. An implementation plan with phased sprints, ordered by
+   value-versus-effort
+
+Don't implement yet. Put planning files in:
+- docs/assets/[ASSET-NAME]/adrs/
+- docs/assets/[ASSET-NAME]/ddd/
+- docs/assets/[ASSET-NAME]/plan/implementation-plan.md
+```
+
+Review the plans. Change anything that does not feel right — plans are cheap to change, code is expensive to change.
+
+#### Step 3: Build — spawn a swarm
+
+Turn the plan into a working asset:
+
+```
+implement the ADRs for [ASSET-NAME]. spawn swarm, implement completely,
+test, validate, benchmark, optimize, document. continue until complete.
+
+Planning files: docs/assets/[ASSET-NAME]/
+```
+
+The AI orchestrates itself. You review the output.
+
+#### Step 4: Verify — make the AI prove it works
+
+Do not take "done" at face value. Walk the asset end-to-end yourself.
+
+```
+Give me a user testing guide for [ASSET-NAME]. Create a step-by-step
+script: "click here, enter this, expect that." Prove to me this works
+from a real user's perspective.
+
+Save to docs/assets/[ASSET-NAME]/user-test.md
+```
+
+Walk through it. If anything is unclear or you are not convinced:
+
+```
+Prove to me that [FEATURE OR COMPONENT] in [ASSET-NAME] is real and
+working. Show me:
+
+1. The exact file paths where this is implemented
+2. The tests that cover it, and the most recent test run output
+3. A live demo — run it end-to-end and show me the output
+4. Any gaps between what I asked for and what was built
+```
+
+Write down every issue, gap, or "that's not quite right."
+
+#### Step 5: Enhance — fix, fill gaps, improve
+
+Hand your verification list back to the AI:
+
+```
+Based on my verification of [ASSET-NAME] below, fix the issues and
+implement the enhancements. Then re-run the user testing guide and show
+me that each item is resolved.
+
+Issues to fix:
+1. [ISSUE]
+
+Gaps between what was requested and what was built:
+1. [MISSING PIECE]
+
+Enhancements to add:
+1. [IMPROVEMENT]
+```
+
+Loop between Step 4 and Step 5 until you are genuinely satisfied — not until the AI says it is done, but until you have personally confirmed it works.
+
+### C. Repeat for every asset on your roadmap
+
+One asset done. Now do it again. And again.
+
+Each asset you ship makes the next one faster:
+
+- The **knowledge base gets richer** as you ingest what you learn while building each asset
+- The **plans get sharper** because the AI learns your business's patterns and preferences
+- The **builds get faster** because the AI can reuse components and conventions across assets
+- **You** get sharper too — at asking the right opening question, at spotting the right idea, at pushing back during verification
+
+Work down the list from your Step 1 ranking (highest value-to-effort first), or jump to whatever moves your business most right now. There is no wrong order — only the order of what you actually finish.
+
+When you run out of ideas, just ask again:
+
+```
+Looking at my updated kb and my project goals, what else could you build
+me of value? What am I missing? Rank by value-to-effort ratio and show
+me the top 10 new ideas.
+```
+
+This is the point of Genesis. The knowledge base is the platform. The assets are the output. The output compounds.
+
+---
+
+## 10. Addendum: Helpful Repos and Tools
 
 These open-source repositories are useful companions to the Genesis workflow.
 
-### [microsoft/markitdown](https://github.com/microsoft/markitdown)
+### A. [microsoft/markitdown](https://github.com/microsoft/markitdown)
 
 A Python utility that converts various file formats (PDFs, Word docs, Excel sheets, images, etc.) into Markdown, optimized for use with LLMs and text analysis pipelines.
 
@@ -1130,7 +1329,7 @@ into markdown format. Save the converted files to documents/converted/
 Source folder: [PATH TO YOUR FILES]
 ```
 
-### [mamd69/ruvector-catalog](https://github.com/mamd69/ruvector-catalog)
+### B. [mamd69/ruvector-catalog](https://github.com/mamd69/ruvector-catalog)
 
 A technology recommender system that maps problems to solutions within RuVector's monorepo, helping developers discover the right AI/ML capabilities among 200+ technologies.
 
@@ -1161,14 +1360,15 @@ Business problem: [DESCRIBE YOUR BUSINESS PROBLEM]
 | Find the KB file | `where is my kb stored?` |
 | Re-ingest after adding files | `I added new files. Re-ingest everything into the kb.` |
 
-### The methodology at a glance (Section II)
+### The methodology at a glance (Section 2)
 
 | Step | What You Do | What You Get |
 |------|------------|-------------|
 | **1. Analyze** | Run the goal-planner agent | Research document with findings |
 | **2. Plan** | Create ADRs, DDDs, implementation plan | A roadmap you review and approve |
 | **3. Build** | Launch the agent swarm | Working, tested software and automations |
-| **4. Test / fix / enhance** | Walk through the user testing guide | Verified, production-ready solutions |
+| **4. Verify** | Walk through the user testing guide yourself; make the AI prove what it built | A list of real issues, gaps, and enhancements |
+| **5. Enhance** | Hand the list back to the AI; fix, fill gaps, improve; re-verify | Verified, production-ready solutions worth shipping |
 
 ### Key prompts to remember
 
@@ -1197,9 +1397,17 @@ validate, benchmark, optimize, document. continue until complete.
 ADRs to implement: [ADR NUMBERS, e.g., ADR-001 through ADR-003]
 ```
 
-**Test what was built:**
+**Verify what was built:**
 ```
 Give me a user testing guide. Prove to me that this works.
+```
+
+**Enhance after verification:**
+```
+Based on my verification, fix the issues and implement the enhancements
+below. Re-run the user testing guide and show me each item is resolved.
+
+Issues / gaps / enhancements: [YOUR LIST FROM VERIFICATION]
 ```
 
 ---

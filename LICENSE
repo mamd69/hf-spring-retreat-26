@@ -1,0 +1,107 @@
+HEROFORGE GENESIS PROPRIETARY LICENSE
+
+Copyright (c) 2026 MAMD Ventures, LLC. All rights reserved.
+
+This repository -- including all documents, code, configurations, skills,
+prompts, methodologies, and other materials contained in it (collectively,
+the "Work") -- is the proprietary and confidential property of MAMD
+Ventures, LLC ("MAMD"). The Work is made available strictly for
+authorized use.
+
+
+1. AUTHORIZATION REQUIRED
+
+No person or entity is permitted to access, use, copy, or otherwise rely
+on the Work without prior written permission from MAMD. To request
+authorization, contact support@heroforge.ai.
+
+
+2. PERMITTED USE FOR AUTHORIZED RECIPIENTS
+
+If you have received written permission from MAMD, you may:
+
+  (a) Use the Work internally, within your own business or organization,
+      solely for your own legitimate internal business purposes; and
+
+  (b) Quote or excerpt limited portions of the Work in presentations,
+      articles, internal documents, and similar communications, provided
+      you include a visible attribution substantially in the form:
+
+          "HeroForge Genesis (c) 2026 MAMD Ventures, LLC.
+           Used with permission."
+
+All other uses require additional written permission from MAMD.
+
+
+3. PROHIBITED USES
+
+Without MAMD's prior written permission, you may not:
+
+  (a) Redistribute, republish, post, upload, transmit, or otherwise share
+      the Work (in whole or in part, verbatim or modified) with any
+      third party;
+
+  (b) Create derivative works, adaptations, translations, forks, or
+      modified versions of the Work;
+
+  (c) Resell, sublicense, rent, lease, loan, or otherwise commercially
+      exploit the Work beyond your own internal business use;
+
+  (d) Remove, obscure, or alter any copyright, trademark, authorship, or
+      other proprietary notices contained in the Work;
+
+  (e) Use the Work, in whole or in part, to train, fine-tune, benchmark,
+      evaluate, or otherwise develop any machine-learning model or
+      artificial-intelligence system; or
+
+  (f) Extract, reverse-engineer, decompile, or repackage the
+      methodology, structure, sequencing, or know-how embodied in the
+      Work for any purpose outside your own internal business use.
+
+
+4. NO OPEN-SOURCE GRANT
+
+Nothing in this license grants any rights under any open-source license.
+MAMD retains all right, title, and interest in and to the Work, including
+all copyrights, trademarks, trade secrets, and other intellectual-property
+rights. No rights are granted by implication, estoppel, or otherwise
+except as expressly set forth above.
+
+
+5. CONFIDENTIALITY
+
+You will treat the Work as confidential information of MAMD and apply at
+least the same standard of care that you use to protect your own
+confidential information (and in no event less than a reasonable standard
+of care) to prevent unauthorized use or disclosure.
+
+
+6. TERMINATION
+
+Any violation of this license automatically and immediately terminates
+your rights under it. Upon termination, you must promptly cease all use
+of the Work and destroy (or, at MAMD's option, return) all copies of the
+Work in your possession or control. Sections 3 through 7 survive any
+termination of this license.
+
+
+7. NO WARRANTY; LIMITATION OF LIABILITY
+
+THE WORK IS PROVIDED "AS IS," WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, TITLE, OR NON-INFRINGEMENT.
+
+IN NO EVENT SHALL MAMD VENTURES, LLC, OR ITS OFFICERS, MEMBERS,
+EMPLOYEES, CONTRACTORS, OR AGENTS BE LIABLE FOR ANY CLAIM, DAMAGES, OR
+OTHER LIABILITY -- WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE --
+ARISING FROM, OUT OF, OR IN CONNECTION WITH THE WORK OR THE USE OR OTHER
+DEALINGS IN THE WORK.
+
+
+8. CONTACT
+
+Requests for permission, questions about authorized use, and all other
+inquiries should be directed to:
+
+    MAMD Ventures, LLC
+    support@heroforge.ai
