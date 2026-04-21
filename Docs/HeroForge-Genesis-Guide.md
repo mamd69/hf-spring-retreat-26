@@ -311,6 +311,8 @@ A Codespace is a complete development environment that runs in your browser. No 
 
 This is the easiest option if you are starting fresh or do not have many existing files.
 
+> **Security and privacy:** Your choice between Codespace and local VS Code is also a security choice. See [Section 3.C (Security and Privacy: How to Think About It)](#c-security-and-privacy-how-to-think-about-it) for the full decision framework. Short version: if your documents include PHI, financial records, attorney-client material, or other sensitive data, prefer local VS Code over a cloud Codespace.
+
 #### Option B: Use VS Code on your desktop (best for brownfield projects)
 
 If you have an existing business with lots of files on your computer, working locally is strongly preferred. Your files are already here — no uploading needed.
@@ -401,7 +403,7 @@ This creates two shortcuts:
 | `dsp` | Starts Claude Code without asking permission for every action (required for agent workflows) |
 | `dsp-c` | Same as above, but resumes your last session so it remembers what you were working on |
 
-> **Security note:** The `--dangerously-skip-permissions` flag lets Claude run commands without asking you to approve each one. Only use this in environments you control, like your own Codespace.
+> **Security note:** The `--dangerously-skip-permissions` flag lets Claude run commands without asking you to approve each one. Only use this in environments you control, like your own Local environment or Codespace.
 
 ### Step 6: Install Ruflo
 
@@ -456,6 +458,63 @@ tell me which helpers are activated
 ```
 
 > **Tip:** Helpers are activated in settings.json. You can enable `auto-commit.sh` to automatically save versions of your work. Once enabled, you can say things like "restore to the version from 10 minutes ago."
+
+### C. Security and Privacy: How to Think About It
+
+Security is not a feature you bolt on at the end — it is four decisions you are already making as you go through Genesis, whether you realize it or not. Walk through each one as a question for your own project.
+
+#### 1. Your environment: where does the work actually happen?
+
+You either work in a **Codespace** (a development environment running in the cloud on GitHub's infrastructure) or in **VS Code on your own machine**. Codespaces are private to your GitHub account, but they still run on a third party's computers.
+
+*Decision question:* **Are there business documents you would be uncomfortable loading into a browser-based cloud IDE owned by a third party?** If yes, use local VS Code. If no, a Codespace is fine.
+
+#### 2. Your repo: think of it like a private Google Drive
+
+A private GitHub repository is reasonably secure for most business data — roughly the same class of trust as a private Google Drive or Dropbox Business account. That is why Step 2 tells you to set **Visibility: Private**.
+
+*Decision question:* **Is this data sensitive enough that you would hesitate to put it in your company's private Google Drive?** If no, sync normally to your private repo. If yes, keep it off GitHub entirely (see next point).
+
+#### 3. You can always choose NOT to sync
+
+You are never obligated to put a folder in GitHub just because it sits inside your project. Two tools already covered in this guide give you control:
+
+- **`.gitignore`** — tell Claude Code to exclude any folder from GitHub (used at Step 3, and again in [Section 6, Step 2](#6-building-your-knowledge-base) for `kb-inputs/`).
+- **Add Folder to Workspace** — reference an external folder from VS Code without copying it into the project (Step 3, Option B).
+
+*Decision question:* **Do you want this folder to exist anywhere besides your laptop?** If no, `.gitignore` it or keep it as a referenced workspace folder only. Trade-off: files that are not in GitHub are not backed up by GitHub, so pair with your own local backup (Time Machine, Google Drive-synced folder, etc.).
+
+#### 4. Deployment is its own security decision
+
+When you go from "I built a knowledge base on my laptop" to "this agent is answering live customer calls / reading patient notes / processing payments," the architecture you deploy into becomes part of the design. This is the decision most people underestimate.
+
+**Worked example — Protected Health Information (PHI):** If your knowledge base or deployed asset touches PHI, you cannot just spin it up on a default Vercel/Supabase/OpenAI setup. You need BOTH:
+
+- A **HIPAA-compliant hosting architecture** end-to-end.
+- A **Business Associate Agreement (BAA)** with every vendor in the data path — your LLM provider, your database host, your logging/observability vendor, and so on.
+- Access controls, audit logs, and encryption at rest and in transit.
+
+The same pattern generalizes to other regulated or sensitive data. The question is always the same: *identify the regime, match the architecture, get the vendor agreements.*
+
+| Data type | Regime / standard | What to check |
+|---|---|---|
+| Patient health info | HIPAA | BAA + compliant hosting |
+| EU personal data | GDPR | DPA, data residency, right-to-erasure |
+| Payment cards | PCI DSS | Tokenization, scope minimization |
+| Customer financial data | SOC 2 / state laws | Vendor attestation |
+| Attorney-client / trade secrets | Contractual, NDAs | Vendor confidentiality terms |
+
+When you reach deployment ([Section 9](#9-building-your-genesis-assets)), follow again the five-step methodology from [Section 2](#2-the-genesis-methodology-analyze-plan-build-verify-enhance): Analyze, Plan, Build, Verify, Enhance. Here is a sample Analyze prompt to get you started:
+
+```
+I'm about to deploy [ASSET]. It will handle [TYPE OF DATA].
+What regulatory or compliance regimes apply, what architecture
+constraints do they impose, and what vendor agreements
+(e.g., BAAs, DPAs) do I need before going live? Save the
+analysis to docs/security/deployment-checklist.md.
+```
+
+> **This section is your reference.** You will see short reminders at Step 3 (environment choice), [Section 6, Step 2](#6-building-your-knowledge-base) (sync choice), and [Section 9](#9-building-your-genesis-assets) (deployment). Come back here whenever a new decision comes up.
 
 ---
 
@@ -616,6 +675,8 @@ Referenced folders: [LIST ANY REFERENCED FOLDER PATHS, or write "none"]
 > ```
 > add kb-inputs/ to the .gitignore so it is not uploaded to GitHub
 > ```
+>
+> This is the "opt out of sync" decision from [Section 3.C](#c-security-and-privacy-how-to-think-about-it). If `kb-inputs/` contains PHI, financials, attorney-client material, or other sensitive data, confirm you want it outside GitHub entirely — and pair with your own local backup (Time Machine, Google Drive-synced folder, etc.) since GitHub will not be backing it up.
 
 ### Step 3: Install the skills
 
@@ -1144,6 +1205,8 @@ Save to docs/kb-enhancement/team-verification-form.md
 Now that you have a knowledge base, **you can literally build anything**. The sky is the limit. Your knowledge base is the context engine — every asset you build uses it as the source of truth about your business, your customers, your industry, and your goals.
 
 Every asset you build follows the same five-step methodology from [Section 2](#2-the-genesis-methodology-analyze-plan-build-verify-enhance): Analyze, Plan, Build, Verify, Enhance. The only thing that changes is what you point it at.
+
+> **Deployment is a security decision.** Before you deploy any of the assets below, revisit [Section 3.C, consideration 4](#c-security-and-privacy-how-to-think-about-it). If your asset will touch PHI, EU personal data, payment cards, or other regulated data, the architecture it deploys into is part of the build — not an afterthought. The deployment-checklist prompt in Section 3.C can help you think it through.
 
 ### A. What you can build — a sampling
 
